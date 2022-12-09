@@ -189,6 +189,14 @@ if(!isset($_SESSION['services'])){
                 </div>
                 <div class="formItem">
                     <div class="midblock">
+                        <p class="midform">ALD ?</p>
+                        <select name="ald" id="" class="midform">
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
+                        </select>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
                         <p class="pbut"><a class="ButtonFormMid" onclick="classPrecedente(3)">Precedent</a></p>
                         <p class="pbut"><a class="ButtonFormMid" onclick="classSuivante(3)">Suivant</a></p>
                     </div>
