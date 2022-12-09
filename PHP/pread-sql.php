@@ -84,22 +84,25 @@ try{
 
     } 
 
-
 // ================================================================= Personne de confiance  =================================================================
     
     $stmt = $conn->prepare("SELECT * FROM 'personneconf'");
     $stmt->execute();
+    foreach($stmt as $row){
+        $num_conf = $row['num_conf'];
+    }
 
-    $stmt3 = $conn->query("INSERT INTO `personneconf`(`nom_conf`, `tel_conf`, `adresse_conf`, `prenom_conf`,`num_secu`) VALUES ('$nom_conf','$tel_conf','$adresse_conf','$prenom_conf','$num_secu')");
+    $stmt3 = $conn->query("INSERT INTO `personneconf`(`nom_conf`, `tel_conf`, `adresse_conf`, `prenom_conf`) VALUES ('$nom_conf','$tel_conf','$adresse_conf','$prenom_conf')");
     echo "insert conf fait <br>";
 
 // ================================================================= Personne  à prevenir  =================================================================
     
     $stmt = $conn->prepare("SELECT * FROM 'personneprev'");
     $stmt->execute();
-    echo "'$nom_prev','$tel_prev','$adresse_prev','$prenom_prev','$num_secu'";
-
-    $stmt4 = $conn->query("INSERT INTO `personneprev`(`nom_prev`, `tel_prev`, `adresse_prev`, `prenom_prev`,`num_secu`) VALUES ('$nom_prev','$tel_prev','$adresse_prev','$prenom_prev','$num_secu')");
+    foreach($stmt as $row){
+        $num_prev = $row['num_prev'];
+    }
+    $stmt4 = $conn->query("INSERT INTO `personneprev`(`nom_prev`, `tel_prev`, `adresse_prev`, `prenom_prev`) VALUES ('$nom_prev','$tel_prev','$adresse_prev','$prenom_prev')");
     echo "insert prev fait <br>";
 
 // ================================================================= Patient =================================================================
