@@ -178,13 +178,13 @@ if(!isset($_SESSION['services'])){
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Nom de la mutuelle ou de l'assurance</p>
-                        <input type="text" name="adresse_pat" id="" class="fullform">
+                        <input type="text" name="nom_mut" id="" class="fullform">
                     </div>
                 </div>
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Numéro d'adhérent</p>
-                        <input type="text" name="adresse_pat" id="" class="fullform">
+                        <input type="text" name="num_ad" id="" class="fullform">
                     </div>
                 </div>
                 <div class="formItem">

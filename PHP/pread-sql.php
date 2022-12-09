@@ -29,6 +29,13 @@ $tel_prev = $_POST["tel_prev"];
 $cp_prev = $_POST["cp_prev"];
 $ville_prev = $_POST["ville_prev"];
 $adresse_prev = $_POST["adresse_prev"];
+$nom_secu = $_POST["nom_secu"];
+$nom_mut = $_POST["nom_mut"];
+$assu= $_POST["assu"];
+$ald = $_POST["ald"];
+$chambre = $_POST["chambre"];
+$num_ad = $_POST["num_ad"];
+
 
 //  ---------------------------------------------------------------- Uploads ----------------------------------------------------------------
 
