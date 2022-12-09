@@ -189,11 +189,12 @@ if(!isset($_SESSION['services'])){
                 </div>
                 <div class="formItem">
                     <div class="midblock">
-                        <p class="midform">ALD ?</p>
-                        <select name="ald" id="" class="midform">
+                        <p class="midform">Chambre particulière ?</p>
+                        <select name="chambre" id="" class="midform">
                             <option value="oui">Oui</option>
                             <option value="non">Non</option>
                         </select>
+                    </div>
                 </div>
                 <div class="formItem">
                     <div class="midblock">
