@@ -121,11 +121,11 @@ if(!isset($_SESSION['services'])){
                 <div class="formItem">
                     <div class="midblock">
                         <p class="midform">Téléphone</p>
-                        <input type="text" name="tel" id="" class="midform">
+                        <input type="text" name="tel_pat" id="" class="midform">
                     </div>
                     <div class="midblock">
                         <p class="midform">Mail</p>
-                        <input type="text" name="mail" id="" class="midform">
+                        <input type="text" name="mail_pat" id="" class="midform">
                     </div>
                 </div>
                 <div class="formItem">
