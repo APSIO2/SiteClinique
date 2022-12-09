@@ -26,6 +26,13 @@ $tel_conf = $_POST["tel_conf"];
 $cp_conf = $_POST["cp_conf"];
 $ville_conf = $_POST["ville_conf"];
 $adresse_conf = $_POST["adresse_conf"];
+$num_secu_prev = $_POST["num_secu_prev"];
+$nom_prev = $_POST["nom_prev"];
+$prenom_prev = $_POST["prenom_prev"];
+$tel_prev = $_POST["tel_prev"];
+$cp_prev = $_POST["cp_prev"];
+$ville_prev = $_POST["ville_prev"];
+$adresse_prev = $_POST["adresse_prev"];
 
 //  ---------------------------------------------------------------- Uploads ----------------------------------------------------------------
 
