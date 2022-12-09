@@ -177,17 +177,13 @@ if(!isset($_SESSION['services'])){
                 </div>
                 <div class="formItem">
                     <div class="midblock">
-                        <p class="midform">Code Postal</p>
-                        <input type="text" name="cp_pat" id="" class="midform">
-                    </div>
-                    <div class="midblock">
-                        <p class="midform">Ville</p>
-                        <input type="text" name="ville_pat" id="" class="midform">
+                        <p class="fullform">Nom de la mutuelle ou de l'assurance</p>
+                        <input type="text" name="adresse_pat" id="" class="fullform">
                     </div>
                 </div>
                 <div class="formItem">
                     <div class="midblock">
-                        <p class="fullform">Adresse</p>
+                        <p class="fullform">Numéro d'adhérent</p>
                         <input type="text" name="adresse_pat" id="" class="fullform">
                     </div>
                 </div>
