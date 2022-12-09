@@ -1,3 +1,16 @@
+<?php
+
+session_start();
+if(!isset($_SESSION['services'])){
+    header("Location: ../index.php");
+}else if($_SESSION['services'] != "02"){
+    header("Location: ../index.php");
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,11 +34,11 @@
         <h2>Tableaux de bord</h2>
         <div class="menu">
              <a href="pre-admission.php" class="liendash"><div class="menuItem vw30 ">
-                <p>Pré-Admission</p>
+                <p>Gestion de services</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>
            <div class="menuItem vw30">
-                <p>Autre Outils</p>
+                <p>Gestion des utilisateurs</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>
             <div class="menuItem vw20">
