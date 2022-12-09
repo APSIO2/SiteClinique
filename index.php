@@ -3,8 +3,9 @@
 session_start();
 
 // si la session et deja crée
+if(!isset($_SESSION['services'])){
 
-if($_SESSION['services'] == "01"){
+}else if($_SESSION['services'] == "01"){
 
     // MEDECIN
 
