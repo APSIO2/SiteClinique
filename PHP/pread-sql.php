@@ -15,10 +15,17 @@ $date_op = $_POST['date_op'];
 $heure_op = $_POST['heure_op'];
 $pred_ad = $_POST['pre_ad'];
 $nom_med = $_POST['nom_med'];
-$mail_pat = "toto";
-$tel_pat = "08045440";
+$mail_pat = $_POST['mail'];
+$tel_pat = $_POSt['tel'];
 $num_conf = "1";
 $num_prev = "1";
+$num_secu_conf = $_POST["num_secu_conf"];
+$nom_conf = $_POST["nom_conf"];
+$prenom_conf = $_POST["prenom_conf"];
+$tel_conf = $_POST["tel_conf"];
+$cp_conf = $_POST["cp_conf"];
+$ville_conf = $_POST["ville_conf"];
+$adresse_conf = $_POST["adresse_conf"];
 
 //  ---------------------------------------------------------------- Uploads ----------------------------------------------------------------
 
