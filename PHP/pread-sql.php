@@ -17,16 +17,12 @@ $pred_ad = $_POST['pre_ad'];
 $nom_med = $_POST['nom_med'];
 $mail_pat = $_POST['mail'];
 $tel_pat = $_POSt['tel'];
-$num_conf = "1";
-$num_prev = "1";
-$num_secu_conf = $_POST["num_secu_conf"];
 $nom_conf = $_POST["nom_conf"];
 $prenom_conf = $_POST["prenom_conf"];
 $tel_conf = $_POST["tel_conf"];
 $cp_conf = $_POST["cp_conf"];
 $ville_conf = $_POST["ville_conf"];
 $adresse_conf = $_POST["adresse_conf"];
-$num_secu_prev = $_POST["num_secu_prev"];
 $nom_prev = $_POST["nom_prev"];
 $prenom_prev = $_POST["prenom_prev"];
 $tel_prev = $_POST["tel_prev"];
@@ -83,7 +79,7 @@ try{
 
     } 
 
-    // On verifie si le patien existe deja.
+    // On verifie si le patient existe deja.
 
     $stmt = $conn->prepare("SELECT * FROM `patient`;");
     $stmt->execute();
@@ -98,7 +94,7 @@ try{
 
     }
 
-    // on ajoute le patient dans tout les cas.
+    // on ajoute le patient dans tous les cas.
 
     if ($anneeActuel-$orderDateNais[0] < 18 && !$patienEnBase){ 
 
@@ -111,10 +107,13 @@ try{
         echo "<font color='lightseagreen'>INFO: Insertion mineur Fait.</font> <br>";
     }
 
+// ================================================================= Personne confiance  =================================================================
+    $stmt = $conn->prepare("SELECT * FROM 'personneconf'");
+    $stmt->execute();
 
 // ================================================================= Operation =================================================================
 
-    // On verifie si une operation existe deja dans cest horraire.
+    // On verifie si une operation existe deja dans cette horaire.
 
     $stmt = $conn->prepare("SELECT * FROM `operation`;");
     $stmt->execute();
@@ -129,7 +128,7 @@ try{
 
     }
 
-    // Si il existe pas d'operation pendants cette horraire alors on l'ajoute sinon on mes un message d'erreur.
+    // Si il existe pas d'operation pendant cette horaire alors on l'ajoute sinon on met un message d'erreur.
 
     if(!$OpEnBase){
 
