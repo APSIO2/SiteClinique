@@ -33,30 +33,30 @@ if(!isset($_SESSION['services'])){
     <div class="dashboard">
         <h2>Tableaux de bord</h2>
         <div class="menu">
-             <a href="pre-admission.php" class="liendash"><div class="menuItem vw30 ">
+             <a href="#" class="liendash"><div class="menuItem vw30 ">
                 <p>Gestion de services</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>
-           <div class="menuItem vw30">
+            <a href="#" class="liendash"><div class="menuItem vw30">
                 <p>Gestion des utilisateurs</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>
-            <div class="menuItem vw20">
+            <a href="#" class="liendash"><div class="menuItem vw20">
                 <p>Autre Outils</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
-            </div>
-            <div class="menuItem vw30">
+            </div></a>
+            <a href="#" class="liendash"><div class="menuItem vw30">
                 <p>Autre Outils</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
-            </div>
-            <div class="menuItem vw20">
+            </div></a>
+            <a href="#" class="liendash"><div class="menuItem vw20">
                 <p>Autre Outils</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
-            </div>
-            <div class="menuItem vw30">
+            </div></a>
+            <a href="#" class="liendash"><div class="menuItem vw30">
                 <p>Autre Outils</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
-            </div>
+            </div></a>
         </div>
     </div>
 </body>
