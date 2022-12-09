@@ -141,12 +141,6 @@
                 <h2>Personne de Confiance</h2>
                 <div class="formItem">
                     <div class="midblock">
-                        <p class="fullform">Numéro de sécurité social</p>
-                        <input maxlenght="15" type="text" name="num_secu_conf" id="" class="fullform">
-                    </div>
-                </div>
-                <div class="formItem">
-                    <div class="midblock">
                         <p class="midform">Nom</p>
                         <input type="text" name="nom_conf" id="" class="midform">
                     </div>
@@ -186,12 +180,6 @@
             </div>
             <div class="disabled" id="form4">
                 <h2>Personne à Prévenir</h2>
-                <div class="formItem">
-                    <div class="midblock">
-                        <p class="fullform">Numéro de sécurité social</p>
-                        <input maxlenght="15" type="text" name="num_secu_prev" id="" class="fullform">
-                    </div>
-                </div>
                 <div class="formItem">
                     <div class="midblock">
                         <p class="midform">Nom</p>
