@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+if(!isset($_SESSION['services'])){
+    header("Location: ../index.php");
+}else if($_SESSION['services'] != "03"){
+    header("Location: ../index.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

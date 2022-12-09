@@ -1,3 +1,27 @@
+<?php
+
+session_start();
+
+// si la session et deja crée
+
+if($_SESSION['services'] == "01"){
+
+    // MEDECIN
+
+}else if($_SESSION['services'] == "02"){
+
+    // Admin
+    header("Location: /PHP/dashboard.php");
+
+}else if($_SESSION['services'] == "03"){
+
+    // Sectretaire
+    header("Location: /PHP/pre-adminssion.php");
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
