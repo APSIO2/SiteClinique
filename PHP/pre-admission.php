@@ -152,6 +152,53 @@ if(!isset($_SESSION['services'])){
                 </div>
             </div>
             <div class="disabled" id="form3">
+                <h2>Couverture Sociale</h2>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="fullform">Organisme de Sécurité Sociale</p>
+                        <input type="text" name="nom_secu" id="" class="fullform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="midform">Assuré ?</p>
+                        <select name="assu" id="" class="midform">
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
+                        </select>
+                    </div>
+                    <div class="midblock">
+                        <p class="midform">ALD ?</p>
+                        <select name="ald" id="" class="midform">
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="midform">Code Postal</p>
+                        <input type="text" name="cp_pat" id="" class="midform">
+                    </div>
+                    <div class="midblock">
+                        <p class="midform">Ville</p>
+                        <input type="text" name="ville_pat" id="" class="midform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="fullform">Adresse</p>
+                        <input type="text" name="adresse_pat" id="" class="fullform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="pbut"><a class="ButtonFormMid" onclick="classPrecedente(3)">Precedent</a></p>
+                        <p class="pbut"><a class="ButtonFormMid" onclick="classSuivante(3)">Suivant</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="disabled" id="form4">
                 <h2>Personne de Confiance</h2>
                 <div class="formItem">
                     <div class="midblock">
@@ -187,12 +234,12 @@ if(!isset($_SESSION['services'])){
                 </div>
                 <div class="formItem">
                     <div class="midblock">
-                        <p class="pbut"><a class="ButtonFormMid" onclick="classPrecedente(3)">Precedent</a></p>
-                        <p class="pbut"><a class="ButtonFormMid" onclick="classSuivante(3)">Suivant</a></p>
+                        <p class="pbut"><a class="ButtonFormMid" onclick="classPrecedente(4)">Precedent</a></p>
+                        <p class="pbut"><a class="ButtonFormMid" onclick="classSuivante(4)">Suivant</a></p>
                     </div>
                 </div>
             </div>
-            <div class="disabled" id="form4">
+            <div class="disabled" id="form5">
                 <h2>Personne à Prévenir</h2>
                 <div class="formItem">
                     <div class="midblock">
@@ -228,12 +275,12 @@ if(!isset($_SESSION['services'])){
                 </div>
                 <div class="formItem">
                     <div class="midblock">
-                        <p class="pbut"><a class="ButtonFormMid" onclick="classPrecedente(4)">Precedent</a></p>
-                        <p class="pbut"><a class="ButtonFormMid" onclick="classSuivante(4)">Suivant</a></p>
+                        <p class="pbut"><a class="ButtonFormMid" onclick="classPrecedente(5)">Precedent</a></p>
+                        <p class="pbut"><a class="ButtonFormMid" onclick="classSuivante(5)">Suivant</a></p>
                     </div>
                 </div>
             </div>
-            <div class="disabled" id="form5">
+            <div class="disabled" id="form6">
                 <div class="formItem">
                     <div class="formfile">
                         <p class="fullform">Carte identitée (Recto/verso)</p>
@@ -260,7 +307,7 @@ if(!isset($_SESSION['services'])){
                 </div>
                 <div class="formItem">
                     <div class="midblock">
-                        <button class="buttonFormValid" onclick="classSuivante(5)">Valider</button>
+                        <button class="buttonFormValid" onclick="classSuivante(6)">Valider</button>
                     </div>
                 </div>
             </div>
