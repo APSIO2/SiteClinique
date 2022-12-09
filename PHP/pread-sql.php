@@ -86,7 +86,7 @@ try{
 
 // ================================================================= Personne de confiance  =================================================================
     
-    $stmt = $conn->prepare("SELECT * FROM 'personneconf'");
+    $stmt = $conn->prepare("SELECT * FROM 'personneconf' WHERE 'nom_conf' = '$nom_conf'");
     $stmt->execute();
     foreach($stmt as $row){
         $num_conf = $row['num_conf'];
@@ -97,7 +97,7 @@ try{
 
 // ================================================================= Personne  à prevenir  =================================================================
     
-    $stmt = $conn->prepare("SELECT * FROM 'personneprev'");
+    $stmt = $conn->prepare("SELECT numprev FROM 'personneprev' WHERE 'nom_prev' = '$nom_prev'");
     $stmt->execute();
     foreach($stmt as $row){
         $num_prev = $row['num_prev'];
