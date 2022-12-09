@@ -127,6 +127,7 @@ $stmt = $conn->prepare("SELECT * FROM 'personneprev'");
 $stmt->execute();
 
 $stmt4 = $conn->query("INSERT INTO `personneprev`(`nom_prev`, `tel_prev`, `adresse_prev`, `prenom_prev`, `num_secu`) VALUES ('$nom_prev','$tel_prev','$adresse_prev','$prenom_prev','$num_secu')");
+
 // ================================================================= Operation =================================================================
 
     // On verifie si une operation existe deja dans cette horaire.
