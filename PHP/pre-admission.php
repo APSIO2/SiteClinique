@@ -162,8 +162,8 @@ if(!isset($_SESSION['services'])){
                 </div>
                 <div class="formItem">
                     <div class="midblock">
-                        <p class="midform">Téléphone</p>
-                        <input type="text" name="tel_conf" id="" class="midform">
+                        <p class="fullform">Téléphone</p>
+                        <input type="text" name="tel_conf" id="" class="fullform">
                     </div>
                 </div>
                 <div class="formItem">
@@ -203,8 +203,8 @@ if(!isset($_SESSION['services'])){
                 </div>
                 <div class="formItem">
                     <div class="midblock">
-                        <p class="midform">Téléphone</p>
-                        <input type="text" name="tel_prev" id="" class="midform">
+                        <p class="fullform">Téléphone</p>
+                        <input type="text" name="tel_prev" id="" class="fullform">
                     </div>
                 </div>
                 <div class="formItem">
