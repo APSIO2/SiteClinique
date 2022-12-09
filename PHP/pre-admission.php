@@ -185,6 +185,53 @@
                 </div>
             </div>
             <div class="disabled" id="form4">
+                <h2>Personne à Prévenir</h2>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="fullform">Numéro de sécurité social</p>
+                        <input maxlenght="15" type="text" name="num_secu_prev" id="" class="fullform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="midform">Nom</p>
+                        <input type="text" name="nom_prev" id="" class="midform">
+                    </div>
+                    <div class="midblock">
+                        <p class="midform">Prénom</p>
+                        <input type="text" name="prenom_prev" id="" class="midform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="midform">Téléphone</p>
+                        <input type="text" name="tel_prev" id="" class="midform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="midform">Code Postal</p>
+                        <input type="text" name="cp_prev" id="" class="midform">
+                    </div>
+                    <div class="midblock">
+                        <p class="midform">Ville</p>
+                        <input type="text" name="ville_prev" id="" class="midform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="fullform">Adresse</p>
+                        <input type="text" name="adresse_prev" id="" class="fullform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="pbut"><a class="ButtonFormMid" onclick="classPrecedente(4)">Precedent</a></p>
+                        <p class="pbut"><a class="ButtonFormMid" onclick="classSuivante(4)">Suivant</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="disabled" id="form5">
                 <div class="formItem">
                     <div class="formfile">
                         <p class="fullform">Carte identitée (Recto/verso)</p>
@@ -211,7 +258,7 @@
                 </div>
                 <div class="formItem">
                     <div class="midblock">
-                        <button class="buttonFormValid" onclick="classSuivante(4)">Valider</button>
+                        <button class="buttonFormValid" onclick="classSuivante(5)">Valider</button>
                     </div>
                 </div>
             </div>
