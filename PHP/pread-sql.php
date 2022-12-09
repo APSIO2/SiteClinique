@@ -15,8 +15,8 @@ $date_op = $_POST['date_op'];
 $heure_op = $_POST['heure_op'];
 $pred_ad = $_POST['pre_ad'];
 $nom_med = $_POST['nom_med'];
-$mail_pat = $_POST['mail'];
-$tel_pat = $_POSt['tel'];
+$mail_pat = $_POST['mail_pat'];
+$tel_pat = $_POSt['tel_pat'];
 $nom_conf = $_POST["nom_conf"];
 $prenom_conf = $_POST["prenom_conf"];
 $tel_conf = $_POST["tel_conf"];
@@ -86,24 +86,28 @@ try{
 
 // ================================================================= Personne de confiance  =================================================================
     
-    $stmt = $conn->prepare("SELECT * FROM 'personneconf' WHERE 'nom_conf' = '$nom_conf'");
+    $stmt3 = $conn->query("INSERT INTO `personneconf`(`nom_conf`, `tel_conf`, `adresse_conf`, `prenom_conf`) VALUES ('$nom_conf','$tel_conf','$adresse_conf','$prenom_conf')");
+ 
+    
+    $stmt = $conn->prepare("SELECT * FROM personneconf WHERE tel_conf = '$tel_conf'");
     $stmt->execute();
     foreach($stmt as $row){
         $num_conf = $row['num_conf'];
     }
+    echo "$num_conf";
 
-    $stmt3 = $conn->query("INSERT INTO `personneconf`(`nom_conf`, `tel_conf`, `adresse_conf`, `prenom_conf`) VALUES ('$nom_conf','$tel_conf','$adresse_conf','$prenom_conf')");
-    echo "insert conf fait <br>";
 
 // ================================================================= Personne  à prevenir  =================================================================
     
-    $stmt = $conn->prepare("SELECT numprev FROM 'personneprev' WHERE 'nom_prev' = '$nom_prev'");
+
+    $stmt4 = $conn->query("INSERT INTO `personneprev`(`nom_prev`, `tel_prev`, `adresse_prev`, `prenom_prev`) VALUES ('$nom_prev','$tel_prev','$adresse_prev','$prenom_prev')");
+    echo "insert prev fait <br>";
+
+    $stmt = $conn->prepare("SELECT * FROM personneprev WHERE tel_prev = '$tel_prev'");
     $stmt->execute();
     foreach($stmt as $row){
         $num_prev = $row['num_prev'];
     }
-    $stmt4 = $conn->query("INSERT INTO `personneprev`(`nom_prev`, `tel_prev`, `adresse_prev`, `prenom_prev`) VALUES ('$nom_prev','$tel_prev','$adresse_prev','$prenom_prev')");
-    echo "insert prev fait <br>";
 
 // ================================================================= Patient =================================================================
 
