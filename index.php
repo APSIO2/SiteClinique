@@ -12,12 +12,14 @@ if(!isset($_SESSION['services'])){
 }else if($_SESSION['services'] == "02"){
 
     // Admin
-    header("Location: /PHP/dashboard.php");
+    header("Location: PHP/dashboard.php");
+    die();
 
 }else if($_SESSION['services'] == "03"){
 
     // Sectretaire
-    header("Location: /PHP/pre-admission.php");
+    header("Location: PHP/pre-admission.php");
+    die();
 
 }
 
