@@ -17,7 +17,7 @@ if(!isset($_SESSION['services'])){
 }else if($_SESSION['services'] == "03"){
 
     // Sectretaire
-    header("Location: /PHP/pre-adminssion.php");
+    header("Location: /PHP/pre-admission.php");
 
 }
 
