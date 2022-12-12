@@ -15,8 +15,8 @@ $date_op = $_POST['date_op'];
 $heure_op = $_POST['heure_op'];
 $pred_ad = $_POST['pre_ad'];
 $nom_med = $_POST['nom_med'];
-$mail_pat = $_POST['mail'];
-$tel_pat = $_POSt['tel'];
+$mail_pat = $_POST['mail_pat'];
+$tel_pat = $_POSt['tel_pat'];
 $nom_conf = $_POST["nom_conf"];
 $prenom_conf = $_POST["prenom_conf"];
 $tel_conf = $_POST["tel_conf"];
@@ -67,13 +67,11 @@ function uploads($namef,$namefile,$path) {
 
 
 //  ---------------------------------------------------------------- Insert ----------------------------------------------------------------
-// ================================================================= Patient =================================================================
 try{
     
     $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
 
     // On recupere le numero du medecin.
-
     $stmt = $conn->prepare("SELECT * FROM `personnel`;");
     $stmt->execute();
     foreach ($stmt as $row){
@@ -85,6 +83,34 @@ try{
         }
 
     } 
+
+// ================================================================= Personne de confiance  =================================================================
+    
+    $stmt3 = $conn->query("INSERT INTO `personneconf`(`nom_conf`, `tel_conf`, `adresse_conf`, `prenom_conf`) VALUES ('$nom_conf','$tel_conf','$adresse_conf','$prenom_conf')");
+ 
+    
+    $stmt = $conn->prepare("SELECT * FROM personneconf WHERE tel_conf = '$tel_conf'");
+    $stmt->execute();
+    foreach($stmt as $row){
+        $num_conf = $row['num_conf'];
+    }
+    echo "$num_conf";
+
+
+// ================================================================= Personne  à prevenir  =================================================================
+    
+
+    $stmt4 = $conn->query("INSERT INTO `personneprev`(`nom_prev`, `tel_prev`, `adresse_prev`, `prenom_prev`) VALUES ('$nom_prev','$tel_prev','$adresse_prev','$prenom_prev')");
+    echo "insert prev fait <br>";
+
+    $stmt = $conn->prepare("SELECT * FROM personneprev WHERE tel_prev = '$tel_prev'");
+    $stmt->execute();
+    foreach($stmt as $row){
+        $num_prev = $row['num_prev'];
+    }
+
+// ================================================================= Patient =================================================================
+
 
     // On verifie si le patient existe deja.
 
@@ -105,14 +131,15 @@ try{
 
     if ($anneeActuel-$orderDateNais[0] < 18 && !$patienEnBase){ 
 
-        $stmt2= $conn->query("INSERT INTO patient (`nom_naissance`, `prenom_pat`, `civ_pat`, `date_naissance`, `adresse_pat`, `cp_pat`, `ville_pat`, `email_pat`, `tel_pat`, `nom_epouse`, `num_secu`, `mineur`, `num_conf`, `num_prev`) VALUES ('$nom_nai','$prenom_pat','$civ_pat','$date_nai','$adresse_pat','$cp_pat','$ville_pat','$mail_pat','$tel_pat','$nom_nai','$num_secu','1','$num_conf','$num_prev')");
+        $stmt2= $conn->query("INSERT INTO patient (`nom_naissance`, `prenom_pat`, `civ_pat`, `date_naissance`, `adresse_pat`, `cp_pat`, `ville_pat`, `email_pat`, `tel_pat`, `nom_epouse`, `num_secu`, `mineur`, `num_conf`, `num_prev`) VALUES ('$nom_nai','$prenom_pat','$civ_pat','$date_nai','$adresse_pat','$cp_pat','$ville_pat','$mail_pat','$tel_pat','$nom_nai','$num_secu','1',$num_conf,$num_prev)");
         echo "<font color='lightseagreen'>INFO: Insertion majeur Fait. </font><br>";
 
     }else if($anneeActuel-$orderDateNais[0] > 18 && !$patienEnBase){
 
-        $stmt2= $conn->query("INSERT INTO patient (`nom_naissance`, `prenom_pat`, `civ_pat`, `date_naissance`, `adresse_pat`, `cp_pat`, `ville_pat`, `email_pat`, `tel_pat`, `nom_epouse`, `num_secu`, `mineur`, `num_conf`, `num_prev`) VALUES ('$nom_nai','$prenom_pat','$civ_pat','$date_nai','$adresse_pat','$cp_pat','$ville_pat','$mail_pat','$tel_pat','$nom_ep','$num_secu','0','$num_conf','$num_prev')");
+        $stmt2= $conn->query("INSERT INTO patient (`nom_naissance`, `prenom_pat`, `civ_pat`, `date_naissance`, `adresse_pat`, `cp_pat`, `ville_pat`, `email_pat`, `tel_pat`, `nom_epouse`, `num_secu`, `mineur`, `num_conf`, `num_prev`) VALUES ('$nom_nai','$prenom_pat','$civ_pat','$date_nai','$adresse_pat','$cp_pat','$ville_pat','$mail_pat','$tel_pat','$nom_ep','$num_secu','0',$num_conf,$num_prev)");
         echo "<font color='lightseagreen'>INFO: Insertion mineur Fait.</font> <br>";
     }
+
 
 // ================================================================= Personne de confiance  =================================================================
     
@@ -122,6 +149,7 @@ try{
 
     $stmt4 = $conn->query("INSERT INTO `personneprev`(`nom_prev`, `tel_prev`, `adresse_prev`, `prenom_prev`, `num_secu`) VALUES ('$nom_prev','$tel_prev','$adresse_prev','$prenom_prev','$num_secu')");
 
+    
 // ================================================================= Operation =================================================================
 
     // On verifie si une operation existe deja dans cette horaire.
@@ -143,7 +171,7 @@ try{
 
     if(!$OpEnBase){
 
-        $stmt2= $conn->query("INSERT INTO `operation`(`num_med`, `num_secu`, `date_op`, `heure_op`, `pre_admission`) VALUES ('$num_med','$num_secu','$date_op','$heure_op','$pred_ad')");
+        $stmt2= $conn->query("INSERT INTO `operation`(`num_med`, `num_secu`, `date_op`, `heure_op`, `pre_admission`) VALUES ($num_med,'$num_secu','$date_op','$heure_op','$pred_ad')");
         echo "<font color='limegreen'>Sucess: Opération ajouter avec sucess.</font> <br>";
 
     }else{
