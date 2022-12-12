@@ -7,7 +7,7 @@
 
 
     try{
-        $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'root');
+        $conn = new PDO('mysql:host=localhost:3307;dbname=Hopitale', 'root');
         $stmt = $conn->prepare('SELECT * FROM personnel WHERE id=:id and mdp=:mdp;');
         $stmt->execute([":id"=>$id,":mdp"=>$mdp]);
                 
@@ -17,7 +17,7 @@
 
         switch($row['num_serv']){
             case 01:
-                //   Medecin
+                header("Location: medecin.php");
                 die();
             case 02:
                 //  ADMIN

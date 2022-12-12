@@ -189,8 +189,8 @@ if(!isset($_SESSION['services'])){
                 </div>
                 <div class="formItem">
                     <div class="midblock">
-                        <p class="midform">Chambre particulière ?</p>
-                        <select name="chambre" id="" class="midform">
+                        <p class="fullform">Chambre particulière ?</p>
+                        <select name="chambre" id="" class="fullform">
                             <option value="oui">Oui</option>
                             <option value="non">Non</option>
                         </select>

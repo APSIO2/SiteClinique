@@ -37,7 +37,7 @@ if(!isset($_SESSION['services'])){
                 <p>Gestion de services</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>
-            <a href="#" class="liendash"><div class="menuItem vw30">
+            <a href="gestionUser.php" class="liendash"><div class="menuItem vw30">
                 <p>Gestion des utilisateurs</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>

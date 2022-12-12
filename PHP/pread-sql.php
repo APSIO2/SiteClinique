@@ -116,17 +116,11 @@ try{
 
 // ================================================================= Personne de confiance  =================================================================
     
-    $stmt = $conn->prepare("SELECT * FROM 'personneconf'");
-    $stmt->execute();
-
     $stmt3 = $conn->query("INSERT INTO `personneconf`(`nom_conf`, `tel_conf`, `adresse_conf`, `prenom_conf`, `num_secu`) VALUES ('$nom_conf','$tel_conf','$adresse_conf','$prenom_conf','$num_secu')");
 
 // ================================================================= Personne  à prevenir  =================================================================
-    
-$stmt = $conn->prepare("SELECT * FROM 'personneprev'");
-$stmt->execute();
 
-$stmt4 = $conn->query("INSERT INTO `personneprev`(`nom_prev`, `tel_prev`, `adresse_prev`, `prenom_prev`, `num_secu`) VALUES ('$nom_prev','$tel_prev','$adresse_prev','$prenom_prev','$num_secu')");
+    $stmt4 = $conn->query("INSERT INTO `personneprev`(`nom_prev`, `tel_prev`, `adresse_prev`, `prenom_prev`, `num_secu`) VALUES ('$nom_prev','$tel_prev','$adresse_prev','$prenom_prev','$num_secu')");
 
 // ================================================================= Operation =================================================================
 
@@ -155,6 +149,7 @@ $stmt4 = $conn->query("INSERT INTO `personneprev`(`nom_prev`, `tel_prev`, `adres
     }else{
 
         echo "<font color='darkred'>Error: Opération déjà en base.</font> <br>";
+        
 
     }
 
