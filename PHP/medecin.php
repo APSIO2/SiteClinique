@@ -38,7 +38,7 @@ try{
         <div class="stats" style="background-color:#6a7eb6; background-image: url('../img/mec.png');">
             <h2 class="textstats">
                 <?php
-                    $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = 2 and patient.civ_pat = 'M';");
+                    $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = $id and patient.civ_pat = 'M';");
                     $stmt->execute();
                             
                     foreach ($stmt as $row) {
@@ -52,7 +52,7 @@ try{
         <div class="stats" style="background-color:#c459a0; background-image: url('../img/meuf.png');">
             <h2 class="textstats">
                 <?php
-                    $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = 2 and patient.civ_pat = 'F';");
+                    $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = $id and patient.civ_pat = 'F';");
                     $stmt->execute();
                             
                     foreach ($stmt as $row) {
@@ -66,7 +66,7 @@ try{
         <div class="stats" style="background-color:#c45959; background-image: url('../img/kids.png');">
             <h2 class="textstats">
                 <?php
-                    $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = 2 and patient.mineur=1;");
+                    $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = $id and patient.mineur=1;");
                     $stmt->execute();
                             
                     foreach ($stmt as $row) {
@@ -80,7 +80,7 @@ try{
         <div class="stats" style="background-color:#59c466; background-image: url('../img/fleche.png');">
             <h2 class="textstats">
                 <?php
-                    $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = 2");
+                    $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = $id");
                     $stmt->execute();
                             
                     foreach ($stmt as $row) {
