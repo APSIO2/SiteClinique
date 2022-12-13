@@ -16,7 +16,7 @@ $heure_op = $_POST['heure_op'];
 $pred_ad = $_POST['pre_ad'];
 $nom_med = $_POST['nom_med'];
 $mail_pat = $_POST['mail_pat'];
-$tel_pat = $_POSt['tel_pat'];
+$tel_pat = $_POST['tel_pat'];
 $nom_conf = $_POST["nom_conf"];
 $prenom_conf = $_POST["prenom_conf"];
 $tel_conf = $_POST["tel_conf"];
@@ -44,6 +44,7 @@ $orderDateNais = explode('-', $date_nai);
 $anneeActuel = date('Y');
 echo "Année de naissance : $orderDateNais[0] <br>";
 echo "numero du patient : $num_secu <br><br>";
+
 
 $pathimage = "../scan/$num_secu";
 if(!file_exists($pathimage)){
@@ -92,21 +93,20 @@ try{
     $stmt = $conn->prepare("SELECT * FROM personneconf WHERE tel_conf = '$tel_conf'");
     $stmt->execute();
     foreach($stmt as $row){
-        $num_conf = $row['num_conf'];
+        $num_conf = $row['num_conf']; //recup le num pour l'insert dans la table patient
     }
-    echo "$num_conf";
 
 
 // ================================================================= Personne  à prevenir  =================================================================
     
 
     $stmt4 = $conn->query("INSERT INTO `personneprev`(`nom_prev`, `tel_prev`, `adresse_prev`, `prenom_prev`) VALUES ('$nom_prev','$tel_prev','$adresse_prev','$prenom_prev')");
-    echo "insert prev fait <br>";
+
 
     $stmt = $conn->prepare("SELECT * FROM personneprev WHERE tel_prev = '$tel_prev'");
     $stmt->execute();
     foreach($stmt as $row){
-        $num_prev = $row['num_prev'];
+        $num_prev = $row['num_prev']; //recup le num pour l'insert dans la table patient
     }
 
 // ================================================================= Patient =================================================================
@@ -141,13 +141,6 @@ try{
     }
 
 
-// ================================================================= Personne de confiance  =================================================================
-    
-    $stmt3 = $conn->query("INSERT INTO `personneconf`(`nom_conf`, `tel_conf`, `adresse_conf`, `prenom_conf`, `num_secu`) VALUES ('$nom_conf','$tel_conf','$adresse_conf','$prenom_conf','$num_secu')");
-
-// ================================================================= Personne  à prevenir  =================================================================
-
-    $stmt4 = $conn->query("INSERT INTO `personneprev`(`nom_prev`, `tel_prev`, `adresse_prev`, `prenom_prev`, `num_secu`) VALUES ('$nom_prev','$tel_prev','$adresse_prev','$prenom_prev','$num_secu')");
 
     
 // ================================================================= Operation =================================================================
@@ -180,6 +173,10 @@ try{
         
 
     }
+
+// ================================================================= Couverture Sociale =================================================================
+
+    $stmt=$conn->query("INSERT INTO `couverture sociale`(`nom_secu`, `num_secu`, `nom_assu`, `ald`, `num_adherent`, `chambre`) VALUES ('$nom_secu','$num_secu','$nom_assu','$ald','$num_ad','$chambre')");
 
 }catch(PDOException $e){echo $e->getMessage();}
 
