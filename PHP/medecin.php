@@ -34,6 +34,10 @@ try{
     </svg></a>
     </div>
 
+    <div class="titrestats">
+        <h1>Vos statistiques</h1>
+    </div>
+
     <div class="statslist">
         <div class="stats" style="background-color:#6a7eb6; background-image: url('../img/mec.png');">
             <h2 class="textstats">
@@ -93,6 +97,7 @@ try{
         </div>
     </div>
 
+    
 
 </body>
 </html>
