@@ -18,6 +18,7 @@
         switch($row['num_serv']){
             case 01:
                 header("Location: medecin.php");
+                $_SESSION['id'] = $row['num_med'];
                 die();
             case 02:
                 //  ADMIN
