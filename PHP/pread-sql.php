@@ -92,7 +92,7 @@ try{
     $stmt = $conn->prepare("SELECT * FROM personneconf WHERE tel_conf = '$tel_conf'");
     $stmt->execute();
     foreach($stmt as $row){
-        $num_conf = $row['num_conf'];
+        $num_conf = $row['num_conf']; //recup le num pour l'insert dans la table patient
     }
     echo "$num_conf";
 
@@ -106,7 +106,7 @@ try{
     $stmt = $conn->prepare("SELECT * FROM personneprev WHERE tel_prev = '$tel_prev'");
     $stmt->execute();
     foreach($stmt as $row){
-        $num_prev = $row['num_prev'];
+        $num_prev = $row['num_prev']; //recup le num pour l'insert dans la table patient
     }
 
 // ================================================================= Patient =================================================================
@@ -140,14 +140,6 @@ try{
         echo "<font color='lightseagreen'>INFO: Insertion mineur Fait.</font> <br>";
     }
 
-
-// ================================================================= Personne de confiance  =================================================================
-    
-    $stmt3 = $conn->query("INSERT INTO `personneconf`(`nom_conf`, `tel_conf`, `adresse_conf`, `prenom_conf`, `num_secu`) VALUES ('$nom_conf','$tel_conf','$adresse_conf','$prenom_conf','$num_secu')");
-
-// ================================================================= Personne  à prevenir  =================================================================
-
-    $stmt4 = $conn->query("INSERT INTO `personneprev`(`nom_prev`, `tel_prev`, `adresse_prev`, `prenom_prev`, `num_secu`) VALUES ('$nom_prev','$tel_prev','$adresse_prev','$prenom_prev','$num_secu')");
 
     
 // ================================================================= Operation =================================================================
