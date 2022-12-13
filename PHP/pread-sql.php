@@ -174,6 +174,10 @@ try{
 
     }
 
+// ================================================================= Couverture Sociale =================================================================
+
+    $stmt=$conn->query("INSERT INTO `couverture sociale`(`nom_secu`, `num_secu`, `nom_assu`, `ald`, `num_adherent`, `chambre`) VALUES ('$nom_secu','$num_secu','$nom_assu','$ald','$num_ad','$chambre')");
+
 }catch(PDOException $e){echo $e->getMessage();}
 
 ?>
