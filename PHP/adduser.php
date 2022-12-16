@@ -22,7 +22,7 @@ $service = $_POST['service'];
 // ================================================================= Insert =================================================================
 
 
-$conn  = new PDO('mysql:host=localhost:3307;dbname=Hopitale', 'root');
+$conn  = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev','Sio2021*');
 
 $stmt = $conn->prepare('SELECT * FROM personnel');
 $stmt->execute();

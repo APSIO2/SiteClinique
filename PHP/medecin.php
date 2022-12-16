@@ -10,7 +10,7 @@ if(!isset($_SESSION['services'])){
 $id = $_SESSION['id'];
 
 try{
-    $conn = new PDO('mysql:host=localhost:3307;dbname=Hopitale', 'root');
+    $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev','Sio2021*');
 ?>
 
 <!DOCTYPE html>
