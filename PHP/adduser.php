@@ -21,9 +21,9 @@ $service = $_POST['service'];
 
 // ================================================================= Insert =================================================================
 
+try{
 
-$conn  = new PDO('mysql:host=localhost:3307;dbname=Hopitale', 'root');
-
+$conn  = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
 $stmt = $conn->prepare('SELECT * FROM personnel');
 $stmt->execute();
 foreach ($stmt as $row) {
@@ -39,6 +39,10 @@ foreach ($stmt as $row) {
 
 $stmt2 = $conn->prepare("INSERT INTO personnel (num_serv, prenom_med, nom_med, id, mdp) VALUES($service, '$prenom', '$nom', '$id' , '$mdp');");
 $stmt2->execute();
-
 header("Location: gestionUser.php");
+
+}catch (PDOException $e){
+
+}
+
 ?>

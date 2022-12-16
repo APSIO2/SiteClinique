@@ -18,8 +18,11 @@ if ($serv == "02") {
 
 }
 
-$conn = new PDO('mysql:host=localhost:3307;dbname=Hopitale', 'root');
-$stmt2= $conn->query("DELETE FROM personnel WHERE num_med = $id;");
+try{
+    $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
+    $stmt2= $conn->query("DELETE FROM personnel WHERE num_med = $id;");
+}
+catch(PDOException $e){}
 
 header("Location: gestionUser.php");
 
