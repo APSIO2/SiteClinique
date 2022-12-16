@@ -37,7 +37,7 @@ if(!isset($_SESSION['services'])){
                 <p>Ajout des pré-admissions</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>
-            <a href="delpread.php" class="liendash"><div class="menuItem vw30">
+            <a href="gestionPread.php" class="liendash"><div class="menuItem vw30">
                 <p>Gestion des pré-admissisons</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>

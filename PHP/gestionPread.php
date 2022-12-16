@@ -43,10 +43,9 @@
                 echo '<p class="textpread">'. $heure_op ."</p>";
                 echo '<p class="textpread">'. $pre_ad ."</p>";
                 echo '<p class="textpread">'. $nom_nai ."</p>";
-                
+                echo '<p class="btn"><a href=".php?id='.$id.'&serv='.$serv.'">Supprimer</a></p>';
+                echo '</div>';
                       
-
-                    $stmt2 = $conn->prepare("DELETE FROM `operation` WHERE `operation.num_op` = ");
                 }
                 }
                 catch(PDOException $e){echo $e->getMessage();}
