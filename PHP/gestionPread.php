@@ -39,10 +39,10 @@
                 $nom_nai = $row["nom_naissance"];
                 
                 echo "<form action='gestionPread.php' class=''>";
-                echo '<input type="text" value="'. $num_op .'"> <br>';
+                echo '<p class="textpread">'. $num_op .'</p><br>';
                 echo '<input type="text" value="'. $nom_med .'"> <br>';
-                echo '<input type="text" value="'. $date_op .'"> <br>';
-                echo '<input type="text" value="'. $heure_op .'"> <br>';
+                echo '<input type="date" value="'. $date_op .'"> <br>';
+                echo '<input type="time" value="'. $heure_op .'"> <br>';
                 echo '<input type="text" value="'. $pre_ad .'"> <br>';
                 echo '<input type="text" value="'. $nom_nai .'"> <br>';
                 echo "</form>";
