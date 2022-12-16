@@ -18,6 +18,43 @@
             <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
         </svg></a>
     </div>
+
+    <div class="formpreadsup">
+        <h2>Supprimer une pré-admission</h2>
+        <div class="flexpread">
+            <?php
+                try{
+                    $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
+                    $stmt = $conn->query("SELECT `num_op`,`nom_med`,`date_op`,`heure_op`,`pre_admission`,`nom_naissance` FROM `operation` INNER JOIN `personnel` on `operation.num_med`=`personnel.num_med` inner join `patient` on `operation.num_secu`=`patient.num_secu`");
+                    foreach ($stmt as $row){
+                ?>
+            <div class="pread">
+            <?php
+                $num_op = $row["num_op"];
+                $nom_med = $row["nom_med"];
+                $date_op = $row["date_op"];
+                $heure_op = $row["heure_op"];
+                $pre_ad = $row["pre_admission"];
+                $nom_nai = $row["nom_naissance"];
+                
+                echo '<p class="textpread">'. $num_op ."</p>";
+                echo '<p class="textpread">'. $nom_med ."</p>";
+                echo '<p class="textpread">'. $date_op ."</p>";
+                echo '<p class="textpread">'. $heure_op ."</p>";
+                echo '<p class="textpread">'. $pre_ad ."</p>";
+                echo '<p class="textpread">'. $nom_nai ."</p>";
+                
+                      
+
+                    $stmt2 = $conn->prepare("DELETE FROM `operation` WHERE `operation.num_op` = ");
+                }
+                }
+                catch(PDOException $e){echo $e->getMessage();}
+            ?>
+            </div>
+        </div>
+    </div>
+
     <?php
         try{
             $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
