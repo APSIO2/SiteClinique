@@ -19,11 +19,15 @@
         </svg></a>
     </div>
     <?php
-        //-----------------------------------------------CONNECTION---------------------------------------------------
         try{
             $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
 
-            $stmt = $conn->query("SELECT `nom_med`,`date_op`,`heure_op`,`pre_admission`,`nom_naissance` FROM `operation` INNER JOIN `personnel` on `operation.num_med`=`personnel.num_med` inner join `patient` on `operation.num_secu`=`patient.num_secu`");
+        //------------------------------------------------AFFICHAGE--------------------------------------------------
+
+            $stmt = $conn->prepare("SELECT `num_op`,`nom_med`,`date_op`,`heure_op`,`pre_admission`,`nom_naissance` FROM `operation` INNER JOIN `personnel` on `operation.num_med`=`personnel.num_med` inner join `patient` on `operation.num_secu`=`patient.num_secu`");
+        
+        //-------------------------------------------------SUPPRESSION------------------------------------------------
+            $stmt2 = $conn->prepare("DELETE FROM `operation` WHERE `operation.num_op` = ");
         }
         catch(PDOException $e){echo $e->getMessage();}
     ?>
