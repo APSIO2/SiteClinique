@@ -105,6 +105,13 @@ p{
     background-color: #b5b99b;
 }
 
+.textpread{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 120px;
+}
+
 .fullform{
     width: 30vw;
     height: 4vh;
