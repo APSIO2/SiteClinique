@@ -180,4 +180,5 @@ try{
 
 }catch(PDOException $e){echo $e->getMessage();}
 
+header("Location: pre-admission.php");
 ?>
