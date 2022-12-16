@@ -39,6 +39,7 @@ if(!isset($_SESSION['services'])){
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
+    
     <div class="nav">
     <h1>LPF CLINIQUE</h1>
     </div>
