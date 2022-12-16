@@ -73,6 +73,7 @@ if(!isset($_SESSION['services'])){
                                 catch(PDOException $e){
                                     echo $e->getMessage();
                                 }
+
                             ?>
                         </select>
                     </div>

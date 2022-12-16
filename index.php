@@ -7,6 +7,7 @@ if(!isset($_SESSION['services'])){
 
 }else if($_SESSION['services'] == "01"){
 
+    header("Location: PHP/medecin.php");
     // MEDECIN
 
 }else if($_SESSION['services'] == "02"){
