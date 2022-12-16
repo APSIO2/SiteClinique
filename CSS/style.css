@@ -93,6 +93,17 @@ p{
     width: 120px;
 }
 
+.flexpread{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pread{
+    text-align: center;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #b5b99b;
+}
 
 .fullform{
     width: 30vw;
