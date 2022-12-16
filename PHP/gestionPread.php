@@ -20,12 +20,12 @@
     </div>
 
     <div class="formpreadsup">
-        <h2>Supprimer une pré-admission</h2>
+        <h2>Les rendez-vous :</h2>
         <div class="flexpread">
             <?php
                 try{
                     $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
-                    $stmt = $conn->query("SELECT `num_op`,`nom_med`,`date_op`,`heure_op`,`pre_admission`,`nom_naissance` FROM `operation` INNER JOIN `personnel` on `operation.num_med`=`personnel.num_med` inner join `patient` on `operation.num_secu`=`patient.num_secu`");
+                    $stmt = $conn->query("SELECT `num_op`,`nom_med`,`date_op`,`heure_op`,`pre_admission`,`nom_naissance` FROM `operation` INNER JOIN `personnel` on operation.num_med=personnel.num_med inner join `patient` on operation.num_secu=patient.num_secu");
                     foreach ($stmt as $row){
                 ?>
             <div class="pread">
@@ -43,6 +43,7 @@
                 echo '<p class="textpread">'. $heure_op ."</p>";
                 echo '<p class="textpread">'. $pre_ad ."</p>";
                 echo '<p class="textpread">'. $nom_nai ."</p>";
+                echo '<p class="btn"><a href="updatePread.php?num_op='.$num_op.'&nom_med='.$nom_med.'&date_op='.$date_op.'&heure_op='.$heure_op.'$pread='.$pre_ad.'&nom_nai='.$nom_nai.'">Modifier</a></p>';
                 echo '<p class="btn"><a href="suppread.php?num_op='.$num_op.'">Supprimer</a></p>';
                 echo '</div>';
                 
