@@ -83,7 +83,8 @@ if(!isset($_SESSION['services'])){
                     <select name="service" id="" class="fullform" required>
 
                         <?php
-                        $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev','Sio2021*');
+                    try{
+                        $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
                         $stmt = $conn->prepare('SELECT * FROM service');
                         $stmt->execute();
 
@@ -113,7 +114,6 @@ if(!isset($_SESSION['services'])){
         <div class="flexuser">
         <?php
 
-            try{
                 $stmt = $conn->prepare('SELECT * FROM personnel');
                 $stmt->execute();
                         

@@ -10,7 +10,7 @@ if(!isset($_SESSION['services'])){
 $id = $_SESSION['id'];
 
 try{
-    $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev','Sio2021*');
+    $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +39,7 @@ try{
     </div>
 
     <div class="statslist">
-        <div class="stats" style="background-color:#6a7eb6; background-image: url('../img/mec.png');">
+        <div class="stats" style="background-color:#6a7eb6; background-image: url('../IMG/mec.png');">
             <h2 class="textstats">
                 <?php
                     $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = $id and patient.civ_pat = 'M';");
@@ -53,7 +53,7 @@ try{
             </h2>
             <p class="libelstats">Nombre d'homme patient<p>
         </div>
-        <div class="stats" style="background-color:#c459a0; background-image: url('../img/meuf.png');">
+        <div class="stats" style="background-color:#c459a0; background-image: url('../IMG/meuf.png');">
             <h2 class="textstats">
                 <?php
                     $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = $id and patient.civ_pat = 'F';");
@@ -67,7 +67,7 @@ try{
             </h2>
             <p class="libelstats">Nombre de femme patiente<p>
         </div>
-        <div class="stats" style="background-color:#c45959; background-image: url('../img/kids.png');">
+        <div class="stats" style="background-color:#c45959; background-image: url('../IMG/kids.png');">
             <h2 class="textstats">
                 <?php
                     $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = $id and patient.mineur=1;");
@@ -81,7 +81,7 @@ try{
             </h2>
             <p class="libelstats">Nombre patient mineur<p>
         </div>
-        <div class="stats" style="background-color:#59c466; background-image: url('../img/fleche.png');">
+        <div class="stats" style="background-color:#59c466; background-image: url('../IMG/fleche.png');">
             <h2 class="textstats">
                 <?php
                     $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = $id");

@@ -7,6 +7,7 @@ if(!isset($_SESSION['services'])){
 
 }else if($_SESSION['services'] == "01"){
 
+    header("Location: PHP/medecin.php");
     // MEDECIN
 
 }else if($_SESSION['services'] == "02"){
@@ -38,6 +39,7 @@ if(!isset($_SESSION['services'])){
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
+    
     <div class="nav">
     <h1>LPF CLINIQUE</h1>
     </div>
