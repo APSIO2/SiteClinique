@@ -37,7 +37,7 @@
                 $pre_ad = $row["pre_admission"];
                 $nom_nai = $row["nom_naissance"];
                 
-                echo '<p class="textpread">'. $num_op ."</p>";
+                /*echo '<p class="textpread">'. $num_op ."</p>";
                 echo '<p class="textpread">'. $nom_med ."</p>";
                 echo '<p class="textpread">'. $date_op ."</p>";
                 echo '<p class="textpread">'. $heure_op ."</p>";
@@ -45,7 +45,7 @@
                 echo '<p class="textpread">'. $nom_nai ."</p>";
                 echo '<p class="btn"><a href="suppread.php?num_op='.$num_op'">Supprimer</a></p>';
                 echo '</div>';
-                      
+                */
                 }
                 }
                 catch(PDOException $e){echo $e->getMessage();}
