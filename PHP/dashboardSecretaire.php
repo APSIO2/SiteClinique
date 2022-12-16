@@ -34,11 +34,11 @@ if(!isset($_SESSION['services'])){
         <h2>Tableaux de bord</h2>
         <div class="menu">
              <a href="pre-admission.php" class="liendash"><div class="menuItem vw30 ">
-                <p>Ajout des pré-admission</p>
+                <p>Ajout des pré-admissions</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>
             <a href="delpread.php" class="liendash"><div class="menuItem vw30">
-                <p>Gestion des pré-admissison</p>
+                <p>Gestion des pré-admissisons</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>
             <a href="#" class="liendash"><div class="menuItem vw20">

@@ -26,7 +26,7 @@
                 die();
             case 03:
                 // Sectretaire
-                header("Location: pre-admission.php");
+                header("Location: dashboardSecretaire.php");
                 die();
             }
         
