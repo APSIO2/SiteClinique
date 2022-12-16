@@ -29,6 +29,7 @@
                     foreach ($stmt as $row){
                 ?>
             <div class="pread">
+
             <?php
                 $num_op = $row["num_op"];
                 $nom_med = $row["nom_med"];
@@ -37,13 +38,14 @@
                 $pre_ad = $row["pre_admission"];
                 $nom_nai = $row["nom_naissance"];
                 
-                echo "<form class=''>";
-                echo '<input value="'. $num_op .'> <br>';
-                echo '<input value="'. $nom_med .'> <br>';
-                echo '<input value="'. $date_op .'> <br>';
-                echo '<input value="'. $heure_op .'> <br>';
-                echo '<input value="'. $pre_ad .'> <br>';
-                echo '<input value="'. $nom_nai .'> <br>';
+                echo "<form action='gestionPread.php' class=''>";
+                echo '<input type="text" value="'. $num_op .'"> <br>';
+                echo '<input type="text" value="'. $nom_med .'"> <br>';
+                echo '<input type="text" value="'. $date_op .'"> <br>';
+                echo '<input type="text" value="'. $heure_op .'"> <br>';
+                echo '<input type="text" value="'. $pre_ad .'"> <br>';
+                echo '<input type="text" value="'. $nom_nai .'"> <br>';
+                echo "</form>";
                 echo '<p class="btn"><a href="updatePread.php?num_op='.$num_op.'&nom_med='.$nom_med.'&date_op='.$date_op.'&heure_op='.$heure_op.'$pread='.$pre_ad.'&nom_nai='.$nom_nai.'">Modifier</a></p>';
                 echo '<p class="btn"><a href="suppread.php?num_op='.$num_op.'">Supprimer</a></p>';
                 echo '</div>';
