@@ -37,12 +37,13 @@
                 $pre_ad = $row["pre_admission"];
                 $nom_nai = $row["nom_naissance"];
                 
-                echo '<p class="textpread">'. $num_op ."</p>";
-                echo '<p class="textpread">'. $nom_med ."</p>";
-                echo '<p class="textpread">'. $date_op ."</p>";
-                echo '<p class="textpread">'. $heure_op ."</p>";
-                echo '<p class="textpread">'. $pre_ad ."</p>";
-                echo '<p class="textpread">'. $nom_nai ."</p>";
+                echo "<form class=''>";
+                echo '<input value="'. $num_op .'> <br>';
+                echo '<input value="'. $nom_med .'> <br>';
+                echo '<input value="'. $date_op .'> <br>';
+                echo '<input value="'. $heure_op .'> <br>';
+                echo '<input value="'. $pre_ad .'> <br>';
+                echo '<input value="'. $nom_nai .'> <br>';
                 echo '<p class="btn"><a href="updatePread.php?num_op='.$num_op.'&nom_med='.$nom_med.'&date_op='.$date_op.'&heure_op='.$heure_op.'$pread='.$pre_ad.'&nom_nai='.$nom_nai.'">Modifier</a></p>';
                 echo '<p class="btn"><a href="suppread.php?num_op='.$num_op.'">Supprimer</a></p>';
                 echo '</div>';
