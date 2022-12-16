@@ -8,19 +8,12 @@ if(!isset($_SESSION['services'])){
 }
 
 
-$id = $_GET['id'];
-$serv = $_GET['serv'];
+$num_op = $_GET['num_op'];
 
-if ($serv == "03") {
-
-    header("Location: gestionUser.php?error=2");
-    die();
-
-}
 
 try{
     $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
-    $stmt2 = $conn->prepare("DELETE FROM `operation` WHERE `operation.num_op` = ");
+    $stmt2 = $conn->prepare("DELETE FROM `operation` WHERE `operation.num_op` = $num_op");
 }
 catch(PDOException $e){}
 
