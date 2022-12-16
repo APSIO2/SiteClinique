@@ -43,7 +43,7 @@
                 echo '<p class="textpread">'. $heure_op ."</p>";
                 echo '<p class="textpread">'. $pre_ad ."</p>";
                 echo '<p class="textpread">'. $nom_nai ."</p>";
-                echo '<p class="btn"><a href="suppread.php?id='.$num_op'">Supprimer</a></p>';
+                echo '<p class="btn"><a href="suppread.php?num_op='.$num_op'">Supprimer</a></p>';
                 echo '</div>';
                       
                 }
