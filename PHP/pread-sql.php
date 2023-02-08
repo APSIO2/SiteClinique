@@ -69,7 +69,7 @@ try{
 
     } 
 
-    // On verifie si le patien existe deja.
+    // On verifie si le patient existe deja.
 
     $stmt = $conn->prepare("SELECT * FROM `patient`;");
     $stmt->execute();
@@ -84,7 +84,7 @@ try{
 
     }
 
-    // on ajoute le patient dans tout les cas.
+    // on ajoute le patient dans tous les cas.
 
     if ($anneeActuel-$orderDateNais[0] < 18 && !$patienEnBase){ 
 
