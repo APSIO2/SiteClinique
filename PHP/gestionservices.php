@@ -25,7 +25,7 @@ if(!isset($_SESSION['services'])){
 </head>
 <body>
     <div class="nav">
-        <h1>LPF CLINIQUE</h1>
+    <a href="/PHP/dashboard.php"><h1>LPF CLINIQUE</h1></a>
         <a class="icone" href="logout.php"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-door-open-fill" viewBox="0 0 16 16">
             <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
         </svg></a>
@@ -41,6 +41,15 @@ if(!isset($_SESSION['services'])){
     <?php } ?>
 
     <?php
+        if (isset($_GET['success']) && $_GET['success'] == 1){
+    ?>
+        <div class="success">
+            <p class="successtext">Le services a bien etais crée!</p>
+        </div>
+
+    <?php } ?>
+
+    <?php
         if (isset($_GET['error']) && $_GET['error'] == 2){
     ?>
         <div class="erreur">
@@ -50,7 +59,7 @@ if(!isset($_SESSION['services'])){
     <?php } ?>
 
     
-    <form action="adduser.php" method="post">
+    <form action="addserv.php" method="post">
         <div class="formuser">
             <h2>Crée un Service</h2>
             <div class="formItem">
@@ -64,39 +73,5 @@ if(!isset($_SESSION['services'])){
             </div>  
         </div>
     </form>
-
-    <div class="formusersup">
-        <h2>Supprimer un services</h2>
-        <div class="flexuser">
-        <?php
-        try{
-                $stmt = $conn->prepare('SELECT * FROM service');
-                $stmt->execute();
-                        
-            foreach ($stmt as $row) {
-                ?>
-                
-                <div class="user">
-                
-                <?php
-            
-                $nom = $row["libelle"];
-                $id = $row["num_serv"];
-                echo '<p class="textuser">'. $nom ."</p>";
-                echo '<p class="btn"><a href="supserv.php?id='.$id.'>Supprimer</a></p>';
-                echo '</div>';
-                }
-            }
-            catch(PDOException $e){
-                echo $e->getMessage();
-            }
-            
-        ?>
-
-                
-            </div>
-        </div>
-    </div>
-</div>
 </body>
 </html>

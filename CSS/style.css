@@ -269,6 +269,20 @@ a{
     margin: 0px;
 }
 
+.success{
+    background-color: rgba(55, 255, 0, 0.286);
+    border-radius: 15px;
+    width: 60vw;
+    margin: 0px auto;
+    padding: 10px;
+    margin-top: 3vh;
+}
+.successtext{
+    text-align: center;
+    color: rgb(11, 147, 4);
+    margin: 0px;
+}
+
 .icone{
     display: inline-block;
     float: right;

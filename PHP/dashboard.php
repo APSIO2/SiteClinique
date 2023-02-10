@@ -33,7 +33,7 @@ if(!isset($_SESSION['services'])){
     <div class="dashboard">
         <h2>Tableaux de bord</h2>
         <div class="menu">
-             <a href="#" class="liendash"><div class="menuItem vw30 ">
+             <a href="gestionservices.php" class="liendash"><div class="menuItem vw30 ">
                 <p>Gestion de services</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>

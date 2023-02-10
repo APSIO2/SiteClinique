@@ -77,7 +77,7 @@
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Numéro de sécurité social</p>
-                        <input maxlenght="15" type="text" name="num_secu" id="" class="fullform">
+                        <input maxlenght="15" minlength="15" type="text" name="num_secu" id="" class="fullform">
                     </div>
                     </div>
                 <div class="formItem">
