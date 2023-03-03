@@ -16,7 +16,7 @@
     </div>
     <form action="PHP/login.php" method="POST">
         <div class="formcon">
-            <h2>Connecter-vous</h2>
+            <h2>Connectez-vous</h2>
             <div class="formItem">
                 <div class="midblock">
                     <p class="fullform">Identifiant :</p>

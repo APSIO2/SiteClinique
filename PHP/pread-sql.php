@@ -81,11 +81,24 @@ function uploads($namef,$namefile,$path) {
 
 // ================================================================= Numéro de Sécurité Social =================================================================
 
-if ()
-{
+if(len($num_secu)==15){
 
+    if ($civ_pat == "Mme")
+    {
+        if (strpos($num_secu,"2")==true )
+        {
+            echo "Numéro de sécurité sociale correcte";
+        }
+    }
+
+    if ($civ_pat == "Mr")
+    {
+    if (strpos($num_secu,"2")==true)
+        {
+        echo "Numéro de sécurité sociale correcte";
+        }
+    }
 }
-
 //  ---------------------------------------------------------------- Insert ----------------------------------------------------------------
 try{
     

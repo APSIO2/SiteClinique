@@ -89,8 +89,8 @@ $today = date('Y-m-d');
                     <div class="midblock">
                         <p class="midform">Civ.</p>
                         <select name="civ_pat" id="" class="midform">
-                            <option value="M">M</option>
-                            <option value="F">F</option>
+                            <option value="M">Mr</option>
+                            <option value="F">Mme</option>
                         </select>
                     </div>
                     <div class="midblock">
