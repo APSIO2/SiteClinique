@@ -39,7 +39,7 @@ $today = date('Y-m-d');
                     <div class="midblock">
                         <p class="fullform">Date d'hospitalisation</p>
                         <?php
-                        echo '<input type="date" name="date_op" min="'.$today.' max="2024-01-01" "id="" class="fullform">';
+                        echo '<input type="date" name="date_op" min="'.$today.'" max="2024-05-01" "id="" class="fullform">';
                         ?>
                     </div>
                 </div>
