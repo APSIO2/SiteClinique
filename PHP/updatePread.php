@@ -8,8 +8,8 @@ if(!isset($_SESSION['services'])){
 }
 
 
-$num_op = $_GET['num_op'];
-$nom_med = $_GET['nom_med'];
+$num_op = $['num_op'];
+$num_med = $_GET['nom_med'];
 $date_op = $_GET['date_op'];
 $heure_op = $_GET['heure_op'];
 $pread = $_GET['pre_ad'];
@@ -18,12 +18,7 @@ $nom_nai = $_GET['nom_nai'];
 
 try{
     $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
-    $stmt = $conn->query("SELECT * FROM `personnel`");
     $stmt2 = $conn->query("SELECT * FROM `patient`");
-
-    foreach($stmt as $row){
-        $num_med = $row["num_med"];
-    }
 
     foreach($stmt2 as $row){
         $num_secu = $row["num_secu"];
@@ -33,6 +28,7 @@ try{
 }
 catch(PDOException $e){}
 
-header("Location: gestionPread.php");
+echo $num_med;
+// header("Location: gestionPread.php");
 
 ?>

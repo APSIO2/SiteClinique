@@ -39,7 +39,7 @@
                 $nom_nai = $row["nom_naissance"];
                 $today = date('Y-m-d');
                 
-                echo "<form action='gestionPread.php' class=''>";
+                echo "<form action='gestionPread.php' class='' method='post'>";
                 echo "<label>Numéro de l'opération :</label><br>";
                 echo $num_op .'</p>';
                 echo "<label>Nom du médecin :</label><br>";
@@ -51,7 +51,8 @@
                                  
                         foreach ($stmt as $row) {
                             $prenom = $row[2];
-                            echo "<option>" . $prenom . "</option>";
+                            $num_med = $row[0];
+                            echo "<option value='$num_med'> $prenom </option>";
                             }
                             echo "1";
                         }
