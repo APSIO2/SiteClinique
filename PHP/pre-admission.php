@@ -14,7 +14,6 @@
 </head>
 <?php
 $today = date('Y-m-d');
-$nextYear = date('Y')+1;
 ?>
 <body>
     <div class="nav">
@@ -40,7 +39,7 @@ $nextYear = date('Y')+1;
                     <div class="midblock">
                         <p class="fullform">Date d'hospitalisation</p>
                         <?php
-                        echo '<input type="date" name="date_op" min="'.$today.' max="'.$nextYear.'" "id="" class="fullform">';
+                        echo '<input type="date" name="date_op" min="'.$today.' max="2024-01-01" "id="" class="fullform">';
                         ?>
                     </div>
                 </div>
