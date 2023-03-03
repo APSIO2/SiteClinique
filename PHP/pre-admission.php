@@ -82,7 +82,7 @@ $today = date('Y-m-d');
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Numéro de sécurité social</p>
-                        <input maxlenght="15" minlength="15" type="text" name="num_secu" id="" class="fullform" required="required">
+                        <input maxlenght="15" minlength="15" type="text" name="num_secu" id="" class="fullform" required minlength="14" maxlength="15" size="15">
                     </div>
                     </div>
                 <div class="formItem">
@@ -119,7 +119,7 @@ $today = date('Y-m-d');
                 <div class="formItem">
                     <div class="midblock">
                         <p class="midform">Téléphone</p>
-                        <input type="text" name="tel_pat" id="" class="midform">
+                        <input type="text" name="tel_pat" id="" class="midform" required minlength="8" maxlength="10" size="10">
                     </div>
                     <div class="midblock">
                         <p class="midform">Mail</p>
@@ -216,7 +216,7 @@ $today = date('Y-m-d');
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Téléphone</p>
-                        <input type="text" name="tel_conf" id="" class="fullform">
+                        <input type="text" name="tel_conf" id="" class="fullform" required minlength="8" maxlength="10" size="10">
                     </div>
                 </div>
                 <div class="formItem">
@@ -257,7 +257,7 @@ $today = date('Y-m-d');
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Téléphone</p>
-                        <input type="text" name="tel_prev" id="" class="fullform">
+                        <input type="text" name="tel_prev" id="" class="fullform" required minlength="8" maxlength="10" size="10">
                     </div>
                 </div>
                 <div class="formItem">
