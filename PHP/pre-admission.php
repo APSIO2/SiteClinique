@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Roboto&display=swap" rel="stylesheet"> 
     <title>Tableau de bord</title>
 </head>
+<?php
+$today = date('Y-m-d');
+?>
 <body>
     <div class="nav">
         <a href="/PHP/dashboardSecretaire.php"><h1>LPF CLINIQUE</h1></a>
@@ -35,7 +38,9 @@
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Date d'hospitalisation</p>
-                        <input type="date" name="date_op" id="" class="fullform">
+                        <?php
+                        echo '<input type="date" name="date_op" min="'.$today.'"id="" class="fullform">';
+                        ?>
                     </div>
                 </div>
                 <div class="formItem">

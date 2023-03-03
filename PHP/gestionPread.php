@@ -37,7 +37,7 @@
                 $heure_op = $row["heure_op"];
                 $pre_ad = $row["pre_admission"];
                 $nom_nai = $row["nom_naissance"];
-                $date_actu = date('Y-M-D');
+                $today = date('Y-m-d');
                 
                 echo "<form action='gestionPread.php' class=''>";
                 echo '<p class="textpread">'. $num_op .'</p><br>';
@@ -58,7 +58,7 @@
                     }
 
                 echo '</select>';
-                echo '<input type="date"  min="'.$date_actu.'" value="'. $date_op .'"> <br>';
+                echo '<input type="date"  min="'.$today.'" value="'. $date_op .'"> <br>';
                 echo '<input type="time" value="'. $heure_op .'"> <br>';
                 echo '<input type="text" value="'. $pre_ad .'"> <br>';
                 echo '<input type="text" value="'. $nom_nai .'"> <br>';
