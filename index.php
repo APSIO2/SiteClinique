@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Roboto&display=swap" rel="stylesheet"> 
-    <title>Page de connexion</title>
+    <link rel="icon" href="IMG/lpf.png" />
+    <title>LPF CLINIQUE</title>
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
