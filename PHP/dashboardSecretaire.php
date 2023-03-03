@@ -3,7 +3,7 @@
 session_start();
 if(!isset($_SESSION['services'])){
     header("Location: ../index.php");
-}else if($_SESSION['services'] != "02"){
+}else if($_SESSION['services'] != "03"){
     header("Location: ../index.php");
 }
 
@@ -33,12 +33,12 @@ if(!isset($_SESSION['services'])){
     <div class="dashboard">
         <h2>Tableaux de bord</h2>
         <div class="menu">
-             <a href="gestionservices.php" class="liendash"><div class="menuItem vw30 ">
-                <p>Gestion de services</p>
+             <a href="pre-admission.php" class="liendash"><div class="menuItem vw30 ">
+                <p>Ajout des pré-admissions</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>
-            <a href="gestionUser.php" class="liendash"><div class="menuItem vw30">
-                <p>Gestion des utilisateurs</p>
+            <a href="gestionPread.php" class="liendash"><div class="menuItem vw30">
+                <p>Gestion des pré-admissisons</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>
             <a href="#" class="liendash"><div class="menuItem vw20">

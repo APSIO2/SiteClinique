@@ -17,7 +17,8 @@
 
         switch($row['num_serv']){
             case 01:
-                //   Medecin
+                header("Location: medecin.php");
+                $_SESSION['id'] = $row['num_med'];
                 die();
             case 02:
                 //  ADMIN
@@ -25,7 +26,7 @@
                 die();
             case 03:
                 // Sectretaire
-                header("Location: pre-admission.php");
+                header("Location: dashboardSecretaire.php");
                 die();
             }
         

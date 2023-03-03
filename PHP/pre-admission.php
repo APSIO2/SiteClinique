@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,10 @@
 </head>
 <body>
     <div class="nav">
-        <a href="/dashboard.php"><h1>LPF CLINIQUE</h1></a>
+        <a href="/PHP/dashboardSecretaire.php"><h1>LPF CLINIQUE</h1></a>
+        <a class="icone" href="logout.php"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-door-open-fill" viewBox="0 0 16 16">
+            <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
+        </svg></a>
     </div>
     <form action="pread-sql.php" method="post" enctype="multipart/form-data">
         <div class="form">
@@ -59,6 +63,7 @@
                                 catch(PDOException $e){
                                     echo $e->getMessage();
                                 }
+
                             ?>
                         </select>
                     </div>
@@ -72,7 +77,7 @@
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Numéro de sécurité social</p>
-                        <input maxlenght="15" type="text" name="num_secu" id="" class="fullform">
+                        <input maxlenght="15" minlength="15" type="text" name="num_secu" id="" class="fullform">
                     </div>
                     </div>
                 <div class="formItem">
@@ -106,6 +111,16 @@
                 </div>
                 <div class="formItem">
                     <div class="midblock">
+                        <p class="midform">Téléphone</p>
+                        <input type="text" name="tel_pat" id="" class="midform">
+                    </div>
+                    <div class="midblock">
+                        <p class="midform">Mail</p>
+                        <input type="text" name="mail_pat" id="" class="midform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
                         <p class="midform">Code Postal</p>
                         <input type="text" name="cp_pat" id="" class="midform">
                     </div>
@@ -128,6 +143,140 @@
                 </div>
             </div>
             <div class="disabled" id="form3">
+                <h2>Couverture Sociale</h2>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="fullform">Organisme de Sécurité Sociale</p>
+                        <input type="text" name="nom_secu" id="" class="fullform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="midform">Assuré ?</p>
+                        <select name="assu" id="" class="midform">
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
+                        </select>
+                    </div>
+                    <div class="midblock">
+                        <p class="midform">ALD ?</p>
+                        <select name="ald" id="" class="midform">
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="fullform">Nom de la mutuelle ou de l'assurance</p>
+                        <input type="text" name="nom_mut" id="" class="fullform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="fullform">Numéro d'adhérent</p>
+                        <input type="text" name="num_ad" id="" class="fullform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="fullform">Chambre particulière ?</p>
+                        <select name="chambre" id="" class="fullform">
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="pbut"><a class="ButtonFormMid" onclick="classPrecedente(3)">Precedent</a></p>
+                        <p class="pbut"><a class="ButtonFormMid" onclick="classSuivante(3)">Suivant</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="disabled" id="form4">
+                <h2>Personne de Confiance</h2>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="midform">Nom</p>
+                        <input type="text" name="nom_conf" id="" class="midform">
+                    </div>
+                    <div class="midblock">
+                        <p class="midform">Prénom</p>
+                        <input type="text" name="prenom_conf" id="" class="midform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="fullform">Téléphone</p>
+                        <input type="text" name="tel_conf" id="" class="fullform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="midform">Code Postal</p>
+                        <input type="text" name="cp_conf" id="" class="midform">
+                    </div>
+                    <div class="midblock">
+                        <p class="midform">Ville</p>
+                        <input type="text" name="ville_conf" id="" class="midform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="fullform">Adresse</p>
+                        <input type="text" name="adresse_conf" id="" class="fullform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="pbut"><a class="ButtonFormMid" onclick="classPrecedente(4)">Precedent</a></p>
+                        <p class="pbut"><a class="ButtonFormMid" onclick="classSuivante(4)">Suivant</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="disabled" id="form5">
+                <h2>Personne à Prévenir</h2>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="midform">Nom</p>
+                        <input type="text" name="nom_prev" id="" class="midform">
+                    </div>
+                    <div class="midblock">
+                        <p class="midform">Prénom</p>
+                        <input type="text" name="prenom_prev" id="" class="midform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="fullform">Téléphone</p>
+                        <input type="text" name="tel_prev" id="" class="fullform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="midform">Code Postal</p>
+                        <input type="text" name="cp_prev" id="" class="midform">
+                    </div>
+                    <div class="midblock">
+                        <p class="midform">Ville</p>
+                        <input type="text" name="ville_prev" id="" class="midform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="fullform">Adresse</p>
+                        <input type="text" name="adresse_prev" id="" class="fullform">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="pbut"><a class="ButtonFormMid" onclick="classPrecedente(5)">Precedent</a></p>
+                        <p class="pbut"><a class="ButtonFormMid" onclick="classSuivante(5)">Suivant</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="disabled" id="form6">
                 <div class="formItem">
                     <div class="formfile">
                         <p class="fullform">Carte identitée (Recto/verso)</p>
@@ -154,7 +303,7 @@
                 </div>
                 <div class="formItem">
                     <div class="midblock">
-                        <button class="buttonFormValid" onclick="classSuivante(3)">Valider</button>
+                        <button class="buttonFormValid" onclick="classSuivante(6)">Valider</button>
                     </div>
                 </div>
             </div>
