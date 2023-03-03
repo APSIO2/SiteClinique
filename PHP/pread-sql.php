@@ -30,7 +30,6 @@ $prenom_conf = $_POST["prenom_conf"];
 $tel_conf = $_POST["tel_conf"];
 $cp_conf = $_POST["cp_conf"];
 $ville_conf = $_POST["ville_conf"];
-
 $adresse_conf = $_POST["adresse_conf"];
 // ================================================================= Presonne à prévenir =================================================================
 
@@ -81,24 +80,6 @@ function uploads($namef,$namefile,$path) {
 
 // ================================================================= Numéro de Sécurité Social =================================================================
 
-if(len($num_secu)==15){
-
-    if ($civ_pat == "Mme")
-    {
-        if (strpos($num_secu,"2")==true )
-        {
-            echo "Numéro de sécurité sociale correcte";
-        }
-    }
-
-    if ($civ_pat == "Mr")
-    {
-    if (strpos($num_secu,"2")==true)
-        {
-        echo "Numéro de sécurité sociale correcte";
-        }
-    }
-}
 //  ---------------------------------------------------------------- Insert ----------------------------------------------------------------
 try{
     
