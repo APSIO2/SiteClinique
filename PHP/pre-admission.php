@@ -14,6 +14,7 @@
 </head>
 <?php
 $today = date('Y-m-d');
+$nextYear = date('Y')+1;
 ?>
 <body>
     <div class="nav">
@@ -39,7 +40,7 @@ $today = date('Y-m-d');
                     <div class="midblock">
                         <p class="fullform">Date d'hospitalisation</p>
                         <?php
-                        echo '<input type="date" name="date_op" min="'.$today.'"id="" class="fullform">';
+                        echo '<input type="date" name="date_op" min="'.$today.' max="'.$nextYear.'" "id="" class="fullform">';
                         ?>
                     </div>
                 </div>
@@ -111,7 +112,9 @@ $today = date('Y-m-d');
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Date de naissance</p>
-                        <input type="date" name="date_nai" id="" class="fullform">
+                        <?php
+                        echo '<input type="date" name="date_nai" min="1930-01-01" max="'.$today.'"id="" class="fullform">';
+                        ?>
                     </div>
                 </div>
                 <div class="formItem">
