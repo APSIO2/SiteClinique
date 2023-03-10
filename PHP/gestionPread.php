@@ -25,25 +25,27 @@
             <?php
                 try{
                     $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
-                    $stmt = $conn->query("SELECT `num_op`,`nom_med`,`date_op`,`heure_op`,`pre_admission`,`nom_naissance` FROM `operation` INNER JOIN `personnel` on operation.num_med=personnel.num_med inner join `patient` on operation.num_secu=patient.num_secu");
+                    $stmt = $conn->query("SELECT `num_op`,`nom_med`,`date_op`,`heure_op`,`pre_admission`,`nom_naissance`, operation.`num_secu`, personnel.`num_med` FROM `operation` INNER JOIN `personnel` on operation.num_med=personnel.num_med inner join `patient` on operation.num_secu=patient.num_secu");
                     foreach ($stmt as $row){
                 ?>
             <div class="pread">
 
             <?php
+                $numero_med = $row["num_med"];
                 $num_op = $row["num_op"];
                 $nom_med = $row["nom_med"];
                 $date_op = $row["date_op"];
                 $heure_op = $row["heure_op"];
                 $pre_ad = $row["pre_admission"];
                 $nom_nai = $row["nom_naissance"];
+                $num_secu = $row["num_secu"];
                 $today = date('Y-m-d');
             
-                echo "<form action='gestionPread.php' class='' method='post'>";
+                echo "<form action='updatePread.php' class='' method='get'>";
                 echo "<label>Numéro de l'opération :</label><br>";
-                echo $num_op."<br>";
-                echo "<label>Nom du médecin :</label><br>";
-                echo '<select name="nom_med" value="'.$nom_med.'" id="" class="fullform">';
+                echo '<input name="num_op" type="text" value="'. $num_op .'" readonly> <br>';
+                echo "<label>Nom du médecin : </label><br>";
+                echo '<select name="num_med" value="'.$nom_med.'" id="" class="fullform">';
                     try{
                         $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
                         $stmt = $conn->prepare('SELECT * FROM personnel WHERE num_serv="01";');
@@ -62,15 +64,16 @@
 
                 echo '</select>';
                 echo "<label>La date du rendez-vous :</label><br>";
-                echo '<input type="date"  min="'.$today.'" value="'. $date_op .'"> <br>';
+                echo '<input name="date_op" type="date"  min="'.$today.'" value="'. $date_op .'"> <br>';
                 echo "<label>L'heure du rendez-vous :</label><br>";
-                echo '<input type="time" value="'. $heure_op .'"> <br>';
+                echo '<input name="heure_op" type="time" value="'. $heure_op .'"> <br>';
                 echo "<label>Admissions pour :</label><br>";
-                echo '<input type="text" value="'. $pre_ad .'"> <br>';
+                echo '<input name="pre-ad" type="text" value="'. $pre_ad .'"> <br>';
                 echo "<label>Nom du patient :</label><br>";
-                echo '<input type="text" value="'. $nom_nai .'"> <br>';
+                echo '<input name="nom_nai" type="text" value="'. $nom_nai .'" readonly> <br>';
+                echo '<input name="num_secu" type="text" value="'. $num_secu .'" readonly> <br>';
+                echo '<button class="btn" type="submit">Modifier</button>';
                 echo "</form>";
-                echo '<p class="btn"><a href="updatePread.php?num_op='.$num_op.'&nom_med='.$nom_med.'&date_op='.$date_op.'&heure_op='.$heure_op.'$pread='.$pre_ad.'&nom_nai='.$nom_nai.'">Modifier</a></p>';
                 echo '<p class="btn"><a href="suppread.php?num_op='.$num_op.'">Supprimer</a></p>';
                 echo '</div>';
                 
@@ -91,6 +94,9 @@
 
         //-------------------------------------------------SUPPRESSION------------------------------------------------
             $stmt2 = $conn->prepare("DELETE FROM `operation` WHERE `operation.num_op` = ");
+
+        //-------------------------------------------------FILTRER------------------------------------------------
+        
         }
         catch(PDOException $e){echo $e->getMessage();}
     ?>

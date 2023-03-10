@@ -119,16 +119,6 @@ $today = date('Y-m-d');
                 <div class="formItem">
                     <div class="midblock">
                         <p class="midform">Téléphone</p>
-                        <input type="text" name="tel_pat" id="" class="midform" required minlength="8" maxlength="10" size="10">
-                    </div>
-                    <div class="midblock">
-                        <p class="midform">Mail</p>
-                        <input type="text" name="mail_pat" id="" class="midform">
-                    </div>
-                </div>
-                <div class="formItem">
-                    <div class="midblock">
-                        <p class="midform">Téléphone</p>
                         <input type="text" name="tel_pat" id="" class="midform">
                     </div>
                     <div class="midblock">
