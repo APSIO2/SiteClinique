@@ -61,13 +61,30 @@
                         }
 
                 echo '</select>';
-                // echo '<input type="text" value="'. $nom_med .'"> <br>';
                 echo "<label>La date du rendez-vous :</label><br>";
                 echo '<input type="date"  min="'.$today.'" value="'. $date_op .'"> <br>';
                 echo "<label>L'heure du rendez-vous :</label><br>";
                 echo '<input type="time" value="'. $heure_op .'"> <br>';
                 echo "<label>Admissions pour :</label><br>";
-                echo '<input type="text" value="'. $pre_ad .'"> <br>';
+                // echo '<input type="text" value="'. $pre_ad .'"> <br>';
+                echo '<select name="pred_ad" value="'.$pre_ad.'" id="" class="fullform">';
+                    try{
+                        $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
+                        $stmt = $conn->prepare('SELECT * FROM personnel WHERE num_serv="01";');
+                        $stmt->execute();
+
+                        foreach ($stmt as $row) {
+                            $num_med = $row[0];
+                            $prenom = $row[2];
+                            echo "<option value='$num_med'> $prenom </option>";
+                            }
+                            echo "1";
+                        }
+                        catch(PDOException $e){
+                            echo $e->getMessage();
+                        }
+
+                echo '</select>';
                 echo "<label>Nom du patient :</label><br>";
                 echo '<input type="text" value="'. $nom_nai .'"> <br>';
                 echo "</form>";

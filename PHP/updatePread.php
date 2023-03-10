@@ -8,7 +8,7 @@ if(!isset($_SESSION['services'])){
 }
 
 
-$num_op = $['num_op'];
+$num_op = $_GET['num_op'];
 $num_med = $_GET['nom_med'];
 $date_op = $_GET['date_op'];
 $heure_op = $_GET['heure_op'];
