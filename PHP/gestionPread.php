@@ -38,20 +38,20 @@
                 $pre_ad = $row["pre_admission"];
                 $nom_nai = $row["nom_naissance"];
                 $today = date('Y-m-d');
-                
+            
                 echo "<form action='gestionPread.php' class='' method='post'>";
                 echo "<label>Numéro de l'opération :</label><br>";
-                echo $num_op .'</p>';
+                echo $num_op."<br>";
                 echo "<label>Nom du médecin :</label><br>";
-                echo '<select name="nom_med" id="" class="fullform">';
+                echo '<select name="nom_med" value="'.$nom_med.'" id="" class="fullform">';
                     try{
                         $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
                         $stmt = $conn->prepare('SELECT * FROM personnel WHERE num_serv="01";');
                         $stmt->execute();
-                                 
+
                         foreach ($stmt as $row) {
-                            $prenom = $row[2];
                             $num_med = $row[0];
+                            $prenom = $row[2];
                             echo "<option value='$num_med'> $prenom </option>";
                             }
                             echo "1";
