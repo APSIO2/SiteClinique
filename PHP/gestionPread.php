@@ -70,7 +70,7 @@
                 echo "<label>Admissions pour :</label><br>";
                 echo '<input name="pre-ad" type="text" value="'. $pre_ad .'"> <br>';
                 echo "<label>Nom du patient :</label><br>";
-                echo '<input name="nom_nai" type="text" value="'. $nom_nai .'" readonly> <br>';
+                echo '<input name="nom_nai" type="text" value="'. $nom_nai .'" readonly>';
                 echo '<input name="num_secu" type="text" value="'. $num_secu .'" readonly> <br>';
                 echo '<button class="btn" type="submit">Modifier</button>';
                 echo "</form>";
@@ -95,7 +95,9 @@
         //-------------------------------------------------SUPPRESSION------------------------------------------------
             $stmt2 = $conn->prepare("DELETE FROM `operation` WHERE `operation.num_op` = ");
 
-        //-------------------------------------------------FILTRER------------------------------------------------
+        //-------------------------------------------------FILTRER----------------------------------------------------
+
+
         
         }
         catch(PDOException $e){echo $e->getMessage();}
