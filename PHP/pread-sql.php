@@ -31,6 +31,7 @@ $tel_conf = $_POST["tel_conf"];
 $cp_conf = $_POST["cp_conf"];
 $ville_conf = $_POST["ville_conf"];
 $adresse_conf = $_POST["adresse_conf"];
+
 // ================================================================= Presonne à prévenir =================================================================
 
 $nom_prev = $_POST["nom_prev"];
@@ -46,7 +47,6 @@ $nom_secu = $_POST["nom_secu"];
 $nom_mut = $_POST["nom_mut"];
 $nom_assu= $_POST["assu"];
 $ald = $_POST["ald"];
-$num_ad = $_POST["num_ad"];
 
 //  ---------------------------------------------------------------- Uploads ----------------------------------------------------------------
 
