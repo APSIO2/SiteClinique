@@ -37,13 +37,55 @@
                 $heure_op = $row["heure_op"];
                 $pre_ad = $row["pre_admission"];
                 $nom_nai = $row["nom_naissance"];
-                
-                echo "<form action='gestionPread.php' class=''>";
-                echo '<p class="textpread">'. $num_op .'</p><br>';
-                echo '<p class="textpread">Médecin :</p><input type="text" value="'. $nom_med .'"> <br>';
-                echo '<input type="date" value="'. $date_op .'"> <br>';
+                $today = date('Y-m-d');
+            
+                echo "<form action='gestionPread.php' class='' method='post'>";
+                echo "<label>Numéro de l'opération :</label><br>";
+                echo $num_op."<br>";
+                echo "<label>Nom du médecin :</label><br>";
+                echo '<select name="nom_med" value="'.$nom_med.'" id="" class="fullform">';
+                    try{
+                        $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
+                        $stmt = $conn->prepare('SELECT * FROM personnel WHERE num_serv="01";');
+                        $stmt->execute();
+
+                        foreach ($stmt as $row) {
+                            $num_med = $row[0];
+                            $prenom = $row[2];
+                            echo "<option value='$num_med'> $prenom </option>";
+                            }
+                            echo "1";
+                        }
+                        catch(PDOException $e){
+                            echo $e->getMessage();
+                        }
+
+                echo '</select>';
+                echo "<label>La date du rendez-vous :</label><br>";
+                echo '<input type="date"  min="'.$today.'" value="'. $date_op .'"> <br>';
+                echo "<label>L'heure du rendez-vous :</label><br>";
                 echo '<input type="time" value="'. $heure_op .'"> <br>';
-                echo '<input type="text" value="'. $pre_ad .'"> <br>';
+                echo "<label>Admissions pour :</label><br>";
+                // echo '<input type="text" value="'. $pre_ad .'"> <br>';
+                echo '<select name="pred_ad" value="'.$pre_ad.'" id="" class="fullform">';
+                    try{
+                        $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
+                        $stmt = $conn->prepare('SELECT * FROM personnel WHERE num_serv="01";');
+                        $stmt->execute();
+
+                        foreach ($stmt as $row) {
+                            $num_med = $row[0];
+                            $prenom = $row[2];
+                            echo "<option value='$num_med'> $prenom </option>";
+                            }
+                            echo "1";
+                        }
+                        catch(PDOException $e){
+                            echo $e->getMessage();
+                        }
+
+                echo '</select>';
+                echo "<label>Nom du patient :</label><br>";
                 echo '<input type="text" value="'. $nom_nai .'"> <br>';
                 echo "</form>";
                 echo '<p class="btn"><a href="updatePread.php?num_op='.$num_op.'&nom_med='.$nom_med.'&date_op='.$date_op.'&heure_op='.$heure_op.'$pread='.$pre_ad.'&nom_nai='.$nom_nai.'">Modifier</a></p>';
@@ -64,7 +106,7 @@
         //------------------------------------------------AFFICHAGE--------------------------------------------------
 
             $stmt = $conn->prepare("SELECT `num_op`,`nom_med`,`date_op`,`heure_op`,`pre_admission`,`nom_naissance` FROM `operation` INNER JOIN `personnel` on `operation.num_med`=`personnel.num_med` inner join `patient` on `operation.num_secu`=`patient.num_secu`");
-        
+
         //-------------------------------------------------SUPPRESSION------------------------------------------------
             $stmt2 = $conn->prepare("DELETE FROM `operation` WHERE `operation.num_op` = ");
         }

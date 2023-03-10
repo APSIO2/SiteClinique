@@ -1,7 +1,8 @@
 <?php
 
-//  ---------------------------------------------------------------- Variable ----------------------------------------------------------------
+//  ---------------------------------------------------------------- Variables ----------------------------------------------------------------
 
+// ================================================================= Patient =================================================================
 $num_secu = $_POST['num_secu'];
 $nom_nai = $_POST['nom_nai'];
 $prenom_pat = $_POST['prenom'];
@@ -11,44 +12,41 @@ $adresse_pat = $_POST['adresse_pat'];
 $cp_pat = $_POST['cp_pat'];
 $ville_pat = $_POST['ville_pat'];
 $nom_ep = $_POST['nom_ep'];
+$mail_pat = $_POST['mail_pat'];
+$tel_pat = $_POST['tel_pat'];
+
+// ================================================================= Opération =================================================================
+
 $date_op = $_POST['date_op'];
 $heure_op = $_POST['heure_op'];
 $pred_ad = $_POST['pre_ad'];
 $nom_med = $_POST['nom_med'];
-$mail_pat = $_POST['mail_pat'];
-$tel_pat = $_POST['tel_pat'];
+$chambre = $_POST["chambre"];
+
+// ================================================================= Personne de confiance =================================================================
+
 $nom_conf = $_POST["nom_conf"];
 $prenom_conf = $_POST["prenom_conf"];
 $tel_conf = $_POST["tel_conf"];
 $cp_conf = $_POST["cp_conf"];
 $ville_conf = $_POST["ville_conf"];
 $adresse_conf = $_POST["adresse_conf"];
+
+// ================================================================= Presonne à prévenir =================================================================
+
 $nom_prev = $_POST["nom_prev"];
 $prenom_prev = $_POST["prenom_prev"];
 $tel_prev = $_POST["tel_prev"];
 $cp_prev = $_POST["cp_prev"];
 $ville_prev = $_POST["ville_prev"];
 $adresse_prev = $_POST["adresse_prev"];
+
+// ================================================================= Sécurité Sociale Patient =================================================================
+
 $nom_secu = $_POST["nom_secu"];
 $nom_mut = $_POST["nom_mut"];
 $nom_assu= $_POST["assu"];
 $ald = $_POST["ald"];
-$chambre = $_POST["chambre"];
-$num_ad = $_POST["num_ad"];
-
-
-//  ---------------------------------------------------------------- Verification variables----------------------------------------------------------------
-
-//---------------------------------------Verif numéro téléphone patient----------------------------------
-if(preg_match("#[0][6][- \.?]?([0-9][0-9][- \.?]?){4}$#", $tel_pat)){
-
-
-}
-
-
-
-
-
 
 //  ---------------------------------------------------------------- Uploads ----------------------------------------------------------------
 
@@ -78,7 +76,19 @@ function uploads($namef,$namefile,$path) {
     echo "Files uploads : $namefile$extension <br>";
 }
 
+//  ---------------------------------------------------------------- Verification ----------------------------------------------------------------
 
+// ================================================================= Numéro de Sécurité Social =================================================================
+
+
+
+// ================================================================= Email =================================================================
+
+if (filter_var($mailpat, FILTER_VALIDATE_EMAIL)) {
+    echo "Email address '$mailpat' is considered valid.\n";
+} else {
+    echo "Email address '$mailpat' is considered invalid.\n";
+}
 
 //  ---------------------------------------------------------------- Insert ----------------------------------------------------------------
 try{

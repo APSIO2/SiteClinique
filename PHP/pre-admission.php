@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Roboto&display=swap" rel="stylesheet"> 
     <title>Tableau de bord</title>
 </head>
+<?php
+$today = date('Y-m-d');
+?>
 <body>
     <div class="nav">
         <a href="/PHP/dashboardSecretaire.php"><h1>LPF CLINIQUE</h1></a>
@@ -35,7 +38,9 @@
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Date d'hospitalisation</p>
-                        <input type="date" name="date_op" id="" class="fullform">
+                        <?php
+                        echo '<input type="date" name="date_op" min="'.$today.'" max="2024-05-01" "id="" class="fullform">';
+                        ?>
                     </div>
                 </div>
                 <div class="formItem">
@@ -77,15 +82,15 @@
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Numéro de sécurité social</p>
-                        <input maxlenght="15" minlength="15" type="text" name="num_secu" id="" class="fullform">
+                        <input maxlenght="15" minlength="15" type="text" name="num_secu" id="" class="fullform" required minlength="14" maxlength="15" size="15">
                     </div>
                     </div>
                 <div class="formItem">
                     <div class="midblock">
                         <p class="midform">Civ.</p>
                         <select name="civ_pat" id="" class="midform">
-                            <option value="M">M</option>
-                            <option value="F">F</option>
+                            <option value="M">Mr</option>
+                            <option value="F">Mme</option>
                         </select>
                     </div>
                     <div class="midblock">
@@ -106,7 +111,19 @@
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Date de naissance</p>
-                        <input type="date" name="date_nai" id="" class="fullform">
+                        <?php
+                        echo '<input type="date" name="date_nai" min="1930-01-01" max="'.$today.'"id="" class="fullform">';
+                        ?>
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="midblock">
+                        <p class="midform">Téléphone</p>
+                        <input type="text" name="tel_pat" id="" class="midform" required minlength="8" maxlength="10" size="10">
+                    </div>
+                    <div class="midblock">
+                        <p class="midform">Mail</p>
+                        <input type="text" name="mail_pat" id="" class="midform">
                     </div>
                 </div>
                 <div class="formItem">
@@ -209,7 +226,7 @@
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Téléphone</p>
-                        <input type="text" name="tel_conf" id="" class="fullform">
+                        <input type="text" name="tel_conf" id="" class="fullform" required minlength="8" maxlength="10" size="10">
                     </div>
                 </div>
                 <div class="formItem">
@@ -250,7 +267,7 @@
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Téléphone</p>
-                        <input type="text" name="tel_prev" id="" class="fullform">
+                        <input type="text" name="tel_prev" id="" class="fullform" required minlength="8" maxlength="10" size="10">
                     </div>
                 </div>
                 <div class="formItem">
