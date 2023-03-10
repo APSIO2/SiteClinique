@@ -96,8 +96,34 @@ try{
             <p class="libelstats">Nombre total de patient<p>
         </div>
     </div>
+    <div class="titrestats">
+        <h1>Vos Pré-admission</h1>
+    </div>
+    <?php
 
-    
+    $stmt = $conn->prepare('SELECT * FROM operation where num_med = ' . $id);
+    $stmt->execute();
+            
+    foreach ($stmt as $row) {
+
+
+        $heure = $row['heure_op'];
+        $type = $row['pre_admission'];
+        $num_secu = $row['num_secu'];
+
+        $date = $row['date_op'];
+
+    ?>
+    <div class="preaddMed">
+        <div class="flexuser">
+            <p class="preaddMedText">Numéro de sécuriter : <?php echo $num_secu; ?></p>
+            <p class="preaddMedText">Date : <?php echo $date; ?> </p>
+            <p class="preaddMedText">Heure : <?php echo $heure; ?></p>
+            <p class="preaddMedText">Type : <?php echo $type; ?></p>
+        </div>
+    </div>
+
+    <?php } ?>
 
 </body>
 </html>

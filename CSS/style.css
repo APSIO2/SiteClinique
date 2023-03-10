@@ -228,6 +228,32 @@ input,select{
     width: 9vw;
     min-width: 120px;
 }
+
+.preaddMed{
+    background-color: #CCD5AE;
+    padding: 10px;
+    width: 80vw;
+    margin: auto;
+    margin-top: 2vh;
+    border-radius: 10px;
+}
+
+.preaddMedText{
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+}
+
+.supButtonMed{
+    float: right;
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    background-color:#c45959;
+    border-radius: 10px;
+    color: white;
+}
+
 a{
     color: #797e69;
     text-decoration: none;
