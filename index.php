@@ -1,3 +1,31 @@
+<?php
+
+session_start();
+
+// si la session et deja crée
+if(!isset($_SESSION['services'])){
+
+}else if($_SESSION['services'] == "01"){
+
+    header("Location: PHP/medecin.php");
+    // MEDECIN
+
+}else if($_SESSION['services'] == "02"){
+
+    // Admin
+    header("Location: PHP/dashboard.php");
+    die();
+
+}else if($_SESSION['services'] == "03"){
+
+    // Sectretaire
+    header("Location: PHP/pre-admission.php");
+    die();
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,6 +40,7 @@
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
+    
     <div class="nav">
     <h1>LPF CLINIQUE</h1>
     </div>

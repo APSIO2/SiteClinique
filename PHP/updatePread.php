@@ -19,7 +19,6 @@ $nom_nai = $_GET['nom_nai'];
 try{
     $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
     $stmt2 = $conn->query("SELECT * FROM `patient`");
-
     foreach($stmt2 as $row){
         $num_secu = $row["num_secu"];
     }

@@ -57,6 +57,62 @@ p{
     border-radius: 10px;
 }
 
+.formuser{
+    background-color: #E9EDC9;
+    margin: auto auto;
+    margin-top: 10vh;
+    width: 40vw;
+    height: 70vh;
+    box-shadow: 0px 0px 28px 6px rgba(0,0,0,0.41);
+    border-radius: 10px;
+}
+.formusersup{
+    background-color: #E9EDC9;
+    margin: auto auto;
+    margin-top: 10vh;
+    width: 80vw;
+    min-height: 100px;
+    box-shadow: 0px 0px 28px 6px rgba(0,0,0,0.41);
+    border-radius: 10px;
+}
+.flexuser{
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+}
+.user{
+    text-align: center;
+    border-radius: 15px;
+    padding: 10px ;
+    background-color: #b5b99b;
+}
+.textuser{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 120px;
+}
+
+.flexpread{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pread{
+    text-align: center;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #b5b99b;
+    width: 550px;
+}
+
+.textpread{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 120px;
+}
+
 .fullform{
     width: 30vw;
     height: 4vh;
@@ -107,6 +163,22 @@ input,select{
     margin: 0px auto;
     transition-duration: 0.2s;
     margin-top: auto;
+}
+
+.btn:hover{
+    
+    background-color: #d1d6c1;
+}
+
+.btn{
+
+    color: #595d4d;
+    background-color: #CCD5AE;
+    border-radius: 15px;
+    width: 100px;
+    margin: 0px;
+    padding: 10px;
+
 }
 .ButtonForm{
     font-family: 'Dela Gothic One', cursive;
@@ -175,8 +247,34 @@ input,select{
     width: 9vw;
     min-width: 120px;
 }
+
+.preaddMed{
+    background-color: #CCD5AE;
+    padding: 10px;
+    width: 80vw;
+    margin: auto;
+    margin-top: 2vh;
+    border-radius: 10px;
+}
+
+.preaddMedText{
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+}
+
+.supButtonMed{
+    float: right;
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    background-color:#c45959;
+    border-radius: 10px;
+    color: white;
+}
+
 a{
-    color: #D4A373;
+    color: #797e69;
     text-decoration: none;
 }
 
@@ -194,11 +292,40 @@ a{
     width: 20vw ; height: 30vh ;
 
 }
+
 .formfile{
     margin-top: 15px;
     background-color: #FEFAE0;
     border-radius: 10px;
     padding: 1vw;
+}
+.erreur{
+    background-color: rgba(255, 0, 0, 0.286);
+    border-radius: 15px;
+    width: 60vw;
+    margin: 0px auto;
+    padding: 10px;
+    margin-top: 3vh;
+
+}
+.erreurtext{
+    text-align: center;
+    color: rgb(147, 4, 4);
+    margin: 0px;
+}
+
+.success{
+    background-color: rgba(55, 255, 0, 0.286);
+    border-radius: 15px;
+    width: 60vw;
+    margin: 0px auto;
+    padding: 10px;
+    margin-top: 3vh;
+}
+.successtext{
+    text-align: center;
+    color: rgb(11, 147, 4);
+    margin: 0px;
 }
 
 .icone{
@@ -244,5 +371,11 @@ a{
     }
     .midform{
         width: 25vw;
+    }
+    .formuser{
+        width: 70vw;
+    }
+    .formcon{
+        width: 70vw;
     }
 }
