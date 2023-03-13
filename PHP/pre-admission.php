@@ -123,7 +123,7 @@ $today = date('Y-m-d');
                     </div>
                     <div class="midblock">
                         <p class="midform">Mail</p>
-                        <input type="text" name="mail_pat" id="" class="midform">
+                        <input type="mail" name="mail_pat" id="" class="midform">
                     </div>
                 </div>
                 <div class="formItem">
