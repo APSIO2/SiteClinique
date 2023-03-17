@@ -83,7 +83,7 @@ $today = date('Y-m-d');
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Numéro de sécurité social</p>
-                        <input maxlenght="15" minlength="15" type="text" name="num_secu" id="" class="fullform" required minlength="14" maxlength="15" size="15">
+                        <input type="text" name="num_secu" id="" class="fullform" required minlength="14" maxlength="15" size="15">
                     </div>
                     </div>
                 <div class="formItem">
@@ -120,27 +120,17 @@ $today = date('Y-m-d');
                 <div class="formItem">
                     <div class="midblock">
                         <p class="midform">Téléphone</p>
-                        <input type="text" name="tel_pat" id="" class="midform" required minlength="8" maxlength="10" size="10">
+                        <input type="text" name="tel_pat" id="" class="midform" required minlength="9" maxlength="10" size="10">
                     </div>
                     <div class="midblock">
                         <p class="midform">Mail</p>
-                        <input type="text" name="mail_pat" id="" class="midform">
-                    </div>
-                </div>
-                <div class="formItem">
-                    <div class="midblock">
-                        <p class="midform">Téléphone</p>
-                        <input type="text" name="tel_pat" id="" class="midform">
-                    </div>
-                    <div class="midblock">
-                        <p class="midform">Mail</p>
-                        <input type="text" name="mail_pat" id="" class="midform">
+                        <input type="mail" name="mail_pat" id="" class="midform">
                     </div>
                 </div>
                 <div class="formItem">
                     <div class="midblock">
                         <p class="midform">Code Postal</p>
-                        <input type="text" name="cp_pat" id="" class="midform">
+                        <input type="text" name="cp_pat" id="" class="midform" required minlength="4" maxlength="5" size="5">
                     </div>
                     <div class="midblock">
                         <p class="midform">Ville</p>
@@ -233,7 +223,7 @@ $today = date('Y-m-d');
                 <div class="formItem">
                     <div class="midblock">
                         <p class="midform">Code Postal</p>
-                        <input type="text" name="cp_conf" id="" class="midform">
+                        <input type="text" name="cp_conf" id="" class="midform" required minlength="5" maxlength="5" size="5">
                     </div>
                     <div class="midblock">
                         <p class="midform">Ville</p>
@@ -274,7 +264,7 @@ $today = date('Y-m-d');
                 <div class="formItem">
                     <div class="midblock">
                         <p class="midform">Code Postal</p>
-                        <input type="text" name="cp_prev" id="" class="midform">
+                        <input type="text" name="cp_prev" id="" class="midform" required minlength="4" maxlength="5" size="5">
                     </div>
                     <div class="midblock">
                         <p class="midform">Ville</p>

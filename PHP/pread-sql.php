@@ -86,11 +86,11 @@ function uploads($namef,$namefile,$path) {
 
 // ================================================================= Email =================================================================
 
-if (filter_var($mailpat, FILTER_VALIDATE_EMAIL)) {
-    echo "Email address '$mailpat' is considered valid.\n";
-} else {
-    echo "Email address '$mailpat' is considered invalid.\n";
-}
+// if (filter_var($mailpat, FILTER_VALIDATE_EMAIL)) {
+//     echo "Email address '$mailpat' is considered valid.\n";
+// } else {
+//     echo "Email address '$mailpat' is considered invalid.\n";
+// }
 
 //  ---------------------------------------------------------------- Insert ----------------------------------------------------------------
 try{
