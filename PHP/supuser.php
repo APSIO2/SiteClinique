@@ -11,7 +11,7 @@ if(!isset($_SESSION['role'])){
 
 
 $id = $_GET['id'];
-$serv = $_GET['serv'];
+$serv = $_GET['role'];
 
 if ($serv == "02") {
 
