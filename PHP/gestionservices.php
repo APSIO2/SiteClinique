@@ -1,5 +1,6 @@
 <?php
 
+require("ConnexionBdd.php");
 session_start();
 if(!isset($_SESSION['services'])){
     header("Location: ../index.php");

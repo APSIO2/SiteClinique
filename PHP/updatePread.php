@@ -1,5 +1,5 @@
 <?php
-
+require("ConnexionBdd.php");
 session_start();
 if(!isset($_SESSION['services'])){
     header("Location: ../index.php");
@@ -18,7 +18,7 @@ $num_secu = $_GET['num_secu'];
 
 
 try{
-    $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
+    $conn = connexionBdd();
     $sql = "UPDATE `operation` SET `num_med`=$num_med,`num_secu`='$num_secu',`date_op`='$date_op',`heure_op`='$heure_op',`pre_admission`='$pread' WHERE operation.num_op = $num_op";
     echo $sql;
     $stmt3 = $conn->query("UPDATE `operation` SET `num_med`=$num_med,`num_secu`='$num_secu',`date_op`='$date_op',`heure_op`='$heure_op',`pre_admission`='$pread' WHERE operation.num_op = $num_op");

@@ -1,5 +1,7 @@
 <?php
 
+require("ConnexionBdd.php");
+
 session_start();
 if(!isset($_SESSION['services'])){
     header("Location: ../index.php");
@@ -19,7 +21,7 @@ if ($serv == "02") {
 }
 
 try{
-    $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
+    $conn = connexionBdd();
     $stmt2= $conn->query("DELETE FROM personnel WHERE num_med = $id;");
 }
 catch(PDOException $e){}

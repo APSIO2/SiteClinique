@@ -1,5 +1,7 @@
 <?php
 
+require("ConnexionBdd.php");
+
 session_start();
 if(!isset($_SESSION['services'])){
     header("Location: ../index.php");
@@ -12,7 +14,7 @@ $num_op = $_GET['num_op'];
 echo "$num_op";
 
 try{
-    $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
+    $conn = connexionBdd();
     $stmt2 = $conn->query("DELETE FROM `operation` WHERE operation.num_op = $num_op");
 }
 catch(PDOException $e){}

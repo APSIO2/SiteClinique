@@ -1,5 +1,5 @@
 <?php
-
+require("ConnexionBdd.php");
 
 
 // Verifie si il est admin 
@@ -23,7 +23,7 @@ $service = $_POST['service'];
 
 try{
 
-$conn  = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
+$conn  = connexionBdd();
 $stmt = $conn->prepare('SELECT * FROM personnel');
 $stmt->execute();
 foreach ($stmt as $row) {
