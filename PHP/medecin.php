@@ -3,9 +3,9 @@
 require("ConnexionBdd.php");
 
 session_start();
-if(!isset($_SESSION['services'])){
+if(!isset($_SESSION['role'])){
     header("Location: ../index.php");
-}else if($_SESSION['services'] != "01"){
+}else if($_SESSION['role'] != "01"){
     header("Location: ../index.php");
 }
 

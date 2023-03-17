@@ -5,9 +5,9 @@ require("ConnexionBdd.php");
 // Verifie si il est admin 
 
 session_start();
-if(!isset($_SESSION['services'])){
+if(!isset($_SESSION['role'])){
     header("Location: ../index.php");
-}else if($_SESSION['services'] != "02"){
+}else if($_SESSION['role'] != "02"){
     header("Location: ../index.php");
 }
 
