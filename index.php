@@ -60,9 +60,26 @@ if(!isset($_SESSION['services'])){
                 </div>
             </div>
             <div class="formItem">
+                <div class="midblock">
+                    <p class="fullform">Captcha :</p>
+                    <div style="position:relative;">
+                        <span id="captcha">captcha text</span>
+                        <div style="position:absolute; top:40%; transform:translateY(-50%);" class="trait"></div>
+                        <div style="position:absolute; top:60%; transform:translateY(-50%);" class="trait"></div>
+                    </div>
+                    
+                    <div style="display:flex;">
+                        <input type="text" id="rep_captcha" class="fullform">
+                        <input type="submit" class="refreshCaptcha" value="Régénérer">
+                    </div>
+                    <span id="output"></span>
+                </div>
+            </div>
+            <div class="formItem">
                 <input type="submit" class="buttonFormValid" value="Connexion">
             </div>
         </div>
     </form>
 </body>
+<script src="JS/captcha.js"></script>
 </html>

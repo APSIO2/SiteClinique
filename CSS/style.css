@@ -5,6 +5,28 @@ body{
     background-color: #FEFAE0;
 }
 
+#captcha {
+    margin-bottom: 1em;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin: auto;
+}
+
+.trait {
+    width: 150px;
+    height: 2px;
+    background-color: #FEFAE0;
+}
+
+.refreshCaptcha {
+    justify-content: right;
+    border: 1px solid #797e69;
+    color: #797e69;
+    background: #b5b99b;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .nav{
     padding: 10px;
     background-color: #FAEDCD;
@@ -49,12 +71,13 @@ p{
 }
 .formcon{
     background-color: #E9EDC9;
-    margin: auto auto;
+    margin: auto;
     margin-top: 10vh;
-    width: 45vw;
-    height: 40vh;
+    width: 100%;
+    max-width: 800px;
     box-shadow: 0px 0px 28px 6px rgba(0,0,0,0.41);
     border-radius: 10px;
+    padding: 5px;
 }
 
 .formuser{
