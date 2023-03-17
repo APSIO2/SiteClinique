@@ -34,12 +34,12 @@ function checkNumSecu(num){
 
     if((num.charAt(0) == 0 || num.charAt(0) > 2 || num.length != 13)){
 
-        console.log("Le numéro de sécuritée n'est pas bon")
+        console.log("Le numéro de sécurité n'est pas bon")
         return false;
 
     }else{
 
-        console.log("Le numéro de sécuritée est bon")
+        console.log("Le numéro de sécurité est bon")
         return true;
 
     }

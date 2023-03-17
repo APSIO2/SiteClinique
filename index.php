@@ -67,15 +67,8 @@ if(!isset($_SESSION['services'])){
                         <div style="position:absolute; top:40%; transform:translateY(-50%);" class="trait"></div>
                         <div style="position:absolute; top:60%; transform:translateY(-50%);" class="trait"></div>
                     </div>
-                    
-                    <div style="display:flex;">
-                        <input type="text" id="rep_captcha" class="fullform">
-                    </div>
-                    <span id="output"></span>
-                </div>
-            </div>
             <div class="formItem">
-                <input type="submit" class="buttonFormValid" value="Connexion" onclick="Connexion()">
+                <input type="submit" class="buttonFormValid" value="Connexion">
             </div>
         </div>
     </form>
