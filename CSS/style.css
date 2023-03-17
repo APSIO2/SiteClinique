@@ -119,6 +119,7 @@ p{
     min-height: 20px;
     display: block;
     margin: 0px;
+    border-radius: 5px;
 }
 .midform{
     width: 12vw;
@@ -126,6 +127,8 @@ p{
     min-height: 20px;
     display: block;
     margin: 0px;
+    border-radius: 5px;
+
 }
 
 input,select{
