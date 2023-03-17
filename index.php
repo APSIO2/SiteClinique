@@ -60,6 +60,13 @@ if(!isset($_SESSION['services'])){
                 </div>
             </div>
             <div class="formItem">
+                <div class="midblock">
+                    <p class="fullform">Captcha</p>
+                    <input name="captcha" type="text">
+                    <img src="PHP/captcha.php" style="vertical-align: middle;"/>
+                </div>
+            </div>
+            <div class="formItem">
                 <input type="submit" class="buttonFormValid" value="Connexion">
             </div>
         </div>
