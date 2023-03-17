@@ -60,14 +60,6 @@ if(!isset($_SESSION['services'])){
                 </div>
             </div>
             <div class="formItem">
-                <div class="midblock">
-                    <p class="fullform">Captcha :</p>
-                    <div style="position:relative;">
-                        <span id="captcha">captcha text</span>
-                        <div style="position:absolute; top:40%; transform:translateY(-50%);" class="trait"></div>
-                        <div style="position:absolute; top:60%; transform:translateY(-50%);" class="trait"></div>
-                    </div>
-            <div class="formItem">
                 <input type="submit" class="buttonFormValid" value="Connexion">
             </div>
         </div>
