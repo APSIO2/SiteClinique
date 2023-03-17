@@ -82,7 +82,19 @@ function uploads($namef,$namefile,$path) {
 
 // ================================================================= Numéro de Sécurité Social =================================================================
 
-
+function is_secsocnum($num_secu){
+    // que des chiffres 
+     $num_secu = preg_replace("/[^0-9]/", "", $num_secu); 
+     // 13 chiffres + 2 de cle. 
+     if ((strlen($num_secu) != 13) && (strlen($num_secu) != 15)) { return 0;} 
+     // premier chiffre : sexe : un ou deux 
+     if (($num_secu[0] == 0) || ( $num_secu[0] > 2)){ return 0;} 
+     // deux chiffres suivants : annee de naissance 
+     // deux chiffres suivants : mois de naissance, entre 1 et 12 
+     if (!in_array(substr($num_secu, 3, 2), range(1, 12))){ return 0;} 
+     
+     return true;
+}
 
 // ================================================================= Email =================================================================
 
