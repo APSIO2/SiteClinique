@@ -1,4 +1,5 @@
 <?php 
+    require("ConnexionBdd.php");
     $id = $_POST["id"];
     $mdp = $_POST["mdp"];
     echo "$id";
@@ -7,7 +8,7 @@
 
 
     try{
-        $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
+        $conn = connexionBdd();
         $stmt = $conn->prepare('SELECT * FROM personnel WHERE id=:id and mdp=:mdp;');
         $stmt->execute([":id"=>$id,":mdp"=>$mdp]);
                 

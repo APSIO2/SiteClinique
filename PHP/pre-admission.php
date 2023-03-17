@@ -13,6 +13,7 @@
     <title>Tableau de bord</title>
 </head>
 <?php
+require("ConnexionBdd.php");
 $today = date('Y-m-d');
 ?>
 <body>
@@ -55,7 +56,7 @@ $today = date('Y-m-d');
                         <select name="nom_med" id="" class="fullform">
                             <?php
                                 try{
-                                    $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
+                                    $conn = connexionBdd();
                                     $stmt = $conn->prepare('SELECT * FROM personnel WHERE num_serv="01";');
                                     $stmt->execute();
                                             

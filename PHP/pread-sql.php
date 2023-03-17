@@ -1,5 +1,7 @@
 <?php
 
+require("ConnexionBdd.php");
+
 //  ---------------------------------------------------------------- Variables ----------------------------------------------------------------
 
 // ================================================================= Patient =================================================================
@@ -93,7 +95,7 @@ if (filter_var($mailpat, FILTER_VALIDATE_EMAIL)) {
 //  ---------------------------------------------------------------- Insert ----------------------------------------------------------------
 try{
     
-    $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
+    $conn = connexionBdd();
 
     // On recupere le numero du medecin.
     $stmt = $conn->prepare("SELECT * FROM `personnel`;");

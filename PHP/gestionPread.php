@@ -23,8 +23,9 @@
         <h2>Les rendez-vous :</h2>
         <div class="flexpread">
             <?php
+            require("ConnexionBdd.php");
                 try{
-                    $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
+                    $conn = connexionBdd();
                     $stmt = $conn->query("SELECT `num_op`,`nom_med`,`date_op`,`heure_op`,`pre_admission`,`nom_naissance` FROM `operation` INNER JOIN `personnel` on operation.num_med=personnel.num_med inner join `patient` on operation.num_secu=patient.num_secu");
                     foreach ($stmt as $row){
                 ?>
@@ -45,7 +46,7 @@
                 echo "<label>Nom du médecin :</label><br>";
                 echo '<select name="nom_med" value="'.$nom_med.'" id="" class="fullform">';
                     try{
-                        $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
+                        $conn = connexionBdd();
                         $stmt = $conn->prepare('SELECT * FROM personnel WHERE num_serv="01";');
                         $stmt->execute();
 
@@ -83,7 +84,7 @@
 
     <?php
         try{
-            $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
+            $conn = connexionBdd();
 
         //------------------------------------------------AFFICHAGE--------------------------------------------------
 

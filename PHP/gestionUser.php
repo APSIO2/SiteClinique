@@ -1,5 +1,7 @@
 <?php
 
+require("ConnexionBdd.php");
+
 session_start();
 if(!isset($_SESSION['services'])){
     header("Location: ../index.php");
@@ -84,7 +86,7 @@ if(!isset($_SESSION['services'])){
 
                         <?php
                     try{
-                        $conn = new PDO('mysql:host=localhost;dbname=Hopitale', 'Dev' , 'Sio2021*');
+                        $conn = connexionBdd();
                         $stmt = $conn->prepare('SELECT * FROM service');
                         $stmt->execute();
 
