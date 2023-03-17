@@ -2,15 +2,32 @@ function classSuivante(nombre){
 
     if(nombre == 2){
 
-        num = document.getElementById("secu").value;
+        if(document.getElementById("secu").value.length == 0 || document.getElementById("mail").value.length == 0){
+            return;
+        }
 
-        if(checkNumSecu(num)){
+        num = document.getElementById("secu").value;
+        mail = document.getElementById("mail").value;
+
+        if(checkNumSecu(num) && checkMail(mail)){
             document.getElementById("form"+nombre).className = "disabled"
             nombre++;
             document.getElementById("form"+nombre).className = "enabled";
-        }else{
-            document.getElementById("secu").style.border = "2px solid red";
         }
+        
+        if(!checkMail(mail)){
+            document.getElementById("mail").style.border = "2px solid red";
+        }else{
+            document.getElementById("mail").style.border = "none";
+        }
+
+        if(!checkNumSecu(num)){
+            document.getElementById("secu").style.border = "2px solid red";
+        }else{
+            document.getElementById("secu").style.border = "none";
+        }
+        
+
     }else{
 
         document.getElementById("form"+nombre).className = "disabled"
@@ -44,6 +61,16 @@ function checkNumSecu(num){
 
     }
 
+}
 
+function checkMail(mail){
+
+    if(mail.includes("@") && mail.includes(".")){
+
+        return true;
+
+    }
+
+    return false;
 
 }
