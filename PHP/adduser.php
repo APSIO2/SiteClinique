@@ -18,6 +18,7 @@ $nom = $_POST['nom'];
 $id = $_POST['id'];
 $mdp = $_POST['mdp'];
 $service = $_POST['service'];
+$role = $_POST['role'];
 
 // ================================================================= Insert =================================================================
 
@@ -37,7 +38,7 @@ foreach ($stmt as $row) {
 
 }
 
-$stmt2 = $conn->prepare("INSERT INTO personnel (num_serv, prenom_med, nom_med, id, mdp) VALUES($service, '$prenom', '$nom', '$id' , '$mdp');");
+$stmt2 = $conn->prepare("INSERT INTO personnel (num_serv, prenom_med, nom_med, id, mdp, num_role) VALUES($service, '$prenom', '$nom', '$id', '$mdp', $role);");
 $stmt2->execute();
 header("Location: gestionUser.php");
 

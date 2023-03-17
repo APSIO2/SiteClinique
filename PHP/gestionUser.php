@@ -83,6 +83,7 @@ if(!isset($_SESSION['role'])){
                 <div class="midblock">
                     <p class="fullform">Services</p>
                     <select name="service" id="" class="fullform" required>
+                    <option value='NULL'>Pas de services</option>
 
                         <?php
                     try{
@@ -96,6 +97,29 @@ if(!isset($_SESSION['role'])){
                             $libelle = $row['libelle'];
 
                             echo "<option value='$num_services'>$libelle</option>";
+
+                        }
+                        ?>
+
+
+                    </select>
+                </div>
+            </div>
+            <div class="formItem">
+                <div class="midblock">
+                    <p class="fullform">Role</p>
+                    <select name="role" id="" class="fullform" required>
+
+                        <?php
+                        $stmt = $conn->prepare('SELECT * FROM role');
+                        $stmt->execute();
+
+                        foreach ($stmt as $row) {
+
+                            $num_role = $row['num_role'];
+                            $libelle = $row['libelle'];
+
+                            echo "<option value='$num_role'>$libelle</option>";
 
                         }
                         ?>
@@ -128,22 +152,15 @@ if(!isset($_SESSION['role'])){
             
                 $nom = $row["nom_med"];
                 $serv = $row["num_serv"];
+                $role = $row["num_role"];
                 $id = $row["num_med"];
 
                 $stmt2 = $conn->prepare("SELECT libelle from personnel inner join service ON personnel.num_serv = service.num_serv where personnel.num_med =  $id");
                 $stmt2->execute();
 
                 echo '<p class="textuser">'. $nom ."</p>";
-                             
-                foreach ($stmt2 as $row2) {
-                    $libelle = $row["libelle"];
-                    echo '<p class="textuser">' . $libelle . "</p>";
-                }
-
-
                 
-                
-                echo '<p class="btn"><a href="supuser.php?id='.$id.'&serv='.$serv.'">Supprimer</a></p>';
+                echo '<p class="btn"><a href="supuser.php?id='.$id.'&role='.$role.'">Supprimer</a></p>';
                 echo '</div>';
                 }
             }
