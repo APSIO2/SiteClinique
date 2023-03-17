@@ -30,7 +30,7 @@ output.innerHTML = "Incorrect, please try again";
 // This event listener is stimulated whenever the user clicks the "Submit" button
 // "Correct!" or "Incorrect, please try again" message is
 // displayed after validating the input text with CAPTCHA
-submitButton.addEventListener('click', function() {
+function Connexion() {
 if (userText.value === captchaText.innerHTML) {
 output.classList.add("correctCaptcha");
 output.innerHTML = "Correct!";
@@ -38,15 +38,4 @@ output.innerHTML = "Correct!";
 output.classList.add("incorrectCaptcha");
 output.innerHTML = "Incorrect, please try again";
 }
-});
-// This event listener is stimulated whenever the user press the "Refresh" button
-// A new random CAPTCHA is generated and displayed after the user clicks the "Refresh" button
-refreshButton.addEventListener('click', function() {
-userText.value = "";
-let refreshArr = [];
-for (let j = 1; j <= 7; j++) {
-refreshArr.push(alphaNums[Math.floor(Math.random() * alphaNums.length)]);
-}
-captchaText.innerHTML = refreshArr.join('');
-output.innerHTML = "";
-});
+};

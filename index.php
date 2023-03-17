@@ -70,13 +70,12 @@ if(!isset($_SESSION['services'])){
                     
                     <div style="display:flex;">
                         <input type="text" id="rep_captcha" class="fullform">
-                        <input type="submit" class="refreshCaptcha" value="Régénérer">
                     </div>
                     <span id="output"></span>
                 </div>
             </div>
             <div class="formItem">
-                <input type="submit" class="buttonFormValid" value="Connexion">
+                <input type="submit" class="buttonFormValid" value="Connexion" onclick="Connexion()">
             </div>
         </div>
     </form>
