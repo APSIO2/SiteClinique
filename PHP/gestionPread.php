@@ -50,7 +50,7 @@
                 echo '<select name="num_med" value="'.$nom_med.'" id="" class="list_med">';
                     try{
                         $conn = connexionBdd();
-                        $stmt = $conn->prepare('SELECT * FROM personnel WHERE num_role="01";');
+                        $stmt = $conn->prepare('SELECT * FROM personnel WHERE num_serv="01";');
                         $stmt->execute();
 
                         foreach ($stmt as $row) {
