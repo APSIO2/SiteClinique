@@ -83,7 +83,7 @@ $today = date('Y-m-d');
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Numéro de sécurité social</p>
-                        <input type="text" name="num_secu" id="secu" class="fullform" required minlength="14" maxlength="15" size="15">
+                        <input type="text" name="num_secu" id="secu" class="fullform" required minlength="13" maxlength="13" size="15">
                     </div>
                     </div>
                 <div class="formItem">
