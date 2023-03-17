@@ -106,17 +106,13 @@ p{
     width: 120px;
 }
 
-.flexpread{
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .pread{
     text-align: center;
     border-radius: 15px;
-    padding: 10px;
+    padding: 5px;
     background-color: #b5b99b;
     width: 550px;
+    margin: 10px;
 }
 
 .textpread{
@@ -124,6 +120,13 @@ p{
     overflow: hidden;
     white-space: nowrap;
     width: 120px;
+}
+
+.info_pat{
+    color: #FEFAE0;
+    background: #b5b99b;
+    font-size: 20px;
+    text-align: center;
 }
 
 .fullform{
