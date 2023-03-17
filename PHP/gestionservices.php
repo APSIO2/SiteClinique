@@ -42,6 +42,15 @@ if(!isset($_SESSION['role'])){
     <?php } ?>
 
     <?php
+        if (isset($_GET['error']) && $_GET['error'] == 3){
+    ?>
+        <div class="erreur">
+            <p class="erreurtext">Erreur: le ne peut pas etre supprimer (des medecin on le service) !</p>
+        </div>
+
+    <?php } ?>
+
+    <?php
         if (isset($_GET['success']) && $_GET['success'] == 1){
     ?>
         <div class="success">
@@ -55,6 +64,15 @@ if(!isset($_SESSION['role'])){
     ?>
         <div class="erreur">
             <p class="erreurtext">Erreur: vous ne pouvez pas supprimer ce service !</p>
+        </div>
+
+    <?php } ?>
+
+    <?php
+        if (isset($_GET['success']) && $_GET['success'] == 2){
+    ?>
+        <div class="success">
+            <p class="successtext">Le service a bien étais supprimer</p>
         </div>
 
     <?php } ?>
@@ -74,5 +92,42 @@ if(!isset($_SESSION['role'])){
             </div>  
         </div>
     </form>
+
+    <div class="formusersup">
+        <h2>Supprimer un utilisateur</h2>
+        <div class="flexuser">
+        <?php
+            try{
+
+                $conn = connexionBdd();
+                $stmt = $conn->prepare('SELECT * FROM service');
+                $stmt->execute();
+                        
+            foreach ($stmt as $row) {
+                ?>
+                
+                <div class="user">
+                
+                <?php
+            
+                $nom = $row["libelle"];
+                $id = $row["num_serv"];
+
+                echo '<p class="textuser">'. $nom ."</p>";
+                
+                echo '<p class="btn"><a href="supserv.php?id='.$id.'">Supprimer</a></p>';
+                echo '</div>';
+                }
+            }
+            catch(PDOException $e){
+                echo $e->getMessage();
+            }
+            
+        ?>
+
+                
+            </div>
+        </div>
+    </div>
 </body>
 </html>
