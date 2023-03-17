@@ -65,5 +65,4 @@ if(!isset($_SESSION['services'])){
         </div>
     </form>
 </body>
-<script src="JS/captcha.js"></script>
 </html>
