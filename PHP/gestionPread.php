@@ -45,9 +45,9 @@
             
                 echo "<form action='updatePread.php' class='' method='get'>";
                 echo "<label>Numéro de l'opération :</label><br>";
-                echo '<input name="num_op" type="text" value="'. $num_op .'" readonly> <br>';
+                echo '<input name="num_op" type="text" value="'. $num_op .'" readonly class="info_pat"> <br>';
                 echo "<label>Nom du médecin : </label><br>";
-                echo '<select name="num_med" value="'.$nom_med.'" id="" class="fullform">';
+                echo '<select name="num_med" value="'.$nom_med.'" id="" class="list_med">';
                     try{
                         $conn = connexionBdd();
                         $stmt = $conn->prepare('SELECT * FROM personnel WHERE num_serv="01";');
@@ -72,8 +72,8 @@
                 echo "<label>Admissions pour :</label><br>";
                 echo '<input name="pre-ad" type="text" value="'. $pre_ad .'"> <br>';
                 echo "<label>Nom du patient :</label><br>";
-                echo '<input name="nom_nai" type="text" value="'. $nom_nai .'" readonly>';
-                echo '<input name="num_secu" type="text" value="'. $num_secu .'" readonly> <br>';
+                echo '<input name="nom_nai" type="text" value="'. $nom_nai .'" readonly class="info_pat">';
+                echo '<input name="num_secu" type="text" value="'. $num_secu .'" readonly class="info_pat"><br>';
                 echo '<button class="btn" type="submit">Modifier</button>';
                 echo "</form>";
                 echo '<p class="btn"><a href="suppread.php?num_op='.$num_op.'">Supprimer</a></p>';
