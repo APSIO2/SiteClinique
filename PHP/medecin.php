@@ -114,6 +114,11 @@ try{
         $num_secu = $row['num_secu'];
 
         $date = $row['date_op'];
+        $today = date("Y-m-d");   
+
+        if($today > $date){
+            continue;
+        }
 
     ?>
     <div class="preaddMed">
