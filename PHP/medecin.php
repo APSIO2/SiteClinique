@@ -100,6 +100,7 @@ try{
     </div>
     <div class="titrestats">
         <h1>Vos Pré-admission</h1>
+        <p>des 5 prochaine semaines</p>
     </div>
     <?php
 
@@ -115,6 +116,16 @@ try{
 
         $date = $row['date_op'];
         $today = date("Y-m-d");   
+
+        $good_format=strtotime ($date);
+        $numberDate = date('W',$good_format);
+
+        $good_format=strtotime ($today);
+        $numberToday = date('W',$good_format);
+        
+        if($numberDate-$numberToday > 5){
+            continue;
+        }
 
         if($today > $date){
             continue;
