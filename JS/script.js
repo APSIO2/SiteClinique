@@ -41,8 +41,57 @@ function classSuivante(nombre){
         
 
     }else if(nombre == 4){
+        
+        cp_conf = document.getElementById("cp_conf").value;
+        tel_conf = document.getElementById("tel_conf").value;
+
+        
+        if(checkTel(tel_conf) && checkCp(cp_conf)){
+            document.getElementById("form"+nombre).className = "disabled"
+            nombre++;
+            document.getElementById("form"+nombre).className = "enabled";
+        }
+        
+
+        if(!checkTel(tel_conf)){
+            document.getElementById("tel_conf").style.border = "2px solid red";
+        }else{
+            document.getElementById("tel_conf").style.border = "none";
+        }
+
+        
+        if(!checkCp(cp_conf)){
+            document.getElementById("cp_conf").style.border = "2px solid red";
+        }else{
+            document.getElementById("cp_conf").style.border = "none";
+        }
+
+
 
     }else if(nombre == 5){
+        
+        cp_prev = document.getElementById("cp_prev").value;
+        tel_prev = document.getElementById("tel_prev").value;
+        
+        if(!checkTel(tel_prev)){
+            document.getElementById("tel_prev").style.border = "2px solid red";
+        }else{
+            document.getElementById("tel_prev").style.border = "none";
+        }
+
+        
+        if(!checkCp(cp_prev)){
+            document.getElementById("cp_prev").style.border = "2px solid red";
+        }else{
+            document.getElementById("cp_prev").style.border = "none";
+        }
+
+                
+        if(checkTel(tel_prev) && checkCp(cp_prev)){
+            document.getElementById("form"+nombre).className = "disabled"
+            nombre++;
+            document.getElementById("form"+nombre).className = "enabled";
+        }
 
     }
     
@@ -75,7 +124,7 @@ function checkTel(tel){
 
 function checkCp(cp){
 
-    if(cp.length == 4){
+    if(cp.length == 5){
         return true;
     }
     return false;

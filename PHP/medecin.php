@@ -44,7 +44,7 @@ try{
         <div class="stats" style="background-color:#6a7eb6; background-image: url('../IMG/mec.png');">
             <h2 class="textstats">
                 <?php
-                    $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = $id and patient.civ_pat = 'M';");
+                    $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = $id and patient.mineur = 0;");
                     $stmt->execute();
                             
                     foreach ($stmt as $row) {
@@ -53,21 +53,7 @@ try{
                     }
                 ?>
             </h2>
-            <p class="libelstats">Nombre d'homme patient<p>
-        </div>
-        <div class="stats" style="background-color:#c459a0; background-image: url('../IMG/meuf.png');">
-            <h2 class="textstats">
-                <?php
-                    $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = $id and patient.civ_pat = 'F';");
-                    $stmt->execute();
-                            
-                    foreach ($stmt as $row) {
-                        $nb = $row[0];
-                        echo $nb;
-                    }
-                ?>
-            </h2>
-            <p class="libelstats">Nombre de femme patiente<p>
+            <p class="libelstats">Nombre de patients majeur<p>
         </div>
         <div class="stats" style="background-color:#c45959; background-image: url('../IMG/kids.png');">
             <h2 class="textstats">

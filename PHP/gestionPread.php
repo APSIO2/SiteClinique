@@ -27,7 +27,7 @@
                 try{
 
                     $conn = connexionBdd();
-                    $stmt = $conn->query("SELECT `num_op`,`nom_med`,`date_op`,`heure_op`,`pre_admission`,`nom_naissance`, operation.`num_secu`, personnel.`num_med` FROM `operation` INNER JOIN `personnel` on operation.num_med=personnel.num_med inner join `patient` on operation.num_secu=patient.num_secu");
+                    $stmt = $conn->query("SELECT `num_op`,`nom_med`,`date_op`,`heure_op`,`pre_admission`,`nom_naissance`, operation.`num_secu`, personnel.`num_med` FROM `operation` INNER JOIN `personnel` on operation.num_med=personnel.num_med inner join `patient` on operation.num_secu=patient.num_secu order by date_op asc");
                     foreach ($stmt as $row){
                 ?>
             <div class="pread">
@@ -71,7 +71,7 @@
                 echo '<input name="heure_op" type="time" value="'. $heure_op .'"> <br>';
                 echo "<label>Admissions pour :</label><br>";
                 echo '<input name="pre-ad" type="text" value="'. $pre_ad .'"> <br>';
-                echo "<label>Nom du patient :</label><br>";
+                echo "<label>Nom du patient : Numéro Sécurité Social :</label><br>";
                 echo '<input name="nom_nai" type="text" value="'. $nom_nai .'" readonly class="info_pat">';
                 echo '<input name="num_secu" type="text" value="'. $num_secu .'" readonly class="info_pat"><br>';
                 echo '<button class="btn" type="submit">Modifier</button>';

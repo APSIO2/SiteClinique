@@ -221,13 +221,13 @@ $today = date('Y-m-d');
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Téléphone</p>
-                        <input type="text" name="tel_conf" id="" class="fullform" required minlength="8" maxlength="10" size="10">
+                        <input type="text" name="tel_conf" id="tel_conf" class="fullform" required minlength="8" maxlength="10" size="10">
                     </div>
                 </div>
                 <div class="formItem">
                     <div class="midblock">
                         <p class="midform">Code Postal</p>
-                        <input type="text" name="cp_conf" id="" class="midform" required minlength="5" maxlength="5" size="5">
+                        <input type="text" name="cp_conf" id="cp_conf" class="midform" required minlength="5" maxlength="5" size="5">
                     </div>
                     <div class="midblock">
                         <p class="midform">Ville</p>
@@ -263,13 +263,13 @@ $today = date('Y-m-d');
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Téléphone</p>
-                        <input type="text" name="tel_prev" id="" class="fullform" required minlength="8" maxlength="10" size="10">
+                        <input type="text" name="tel_prev" id="tel_prev" class="fullform" required minlength="8" maxlength="10" size="10">
                     </div>
                 </div>
                 <div class="formItem">
                     <div class="midblock">
                         <p class="midform">Code Postal</p>
-                        <input type="text" name="cp_prev" id="" class="midform" required minlength="4" maxlength="5" size="5">
+                        <input type="text" name="cp_prev" id="cp_prev" class="midform" required minlength="4" maxlength="5" size="5">
                     </div>
                     <div class="midblock">
                         <p class="midform">Ville</p>
