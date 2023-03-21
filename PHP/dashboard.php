@@ -41,19 +41,19 @@ if(!isset($_SESSION['role'])){
                 <p>Gestion des utilisateurs</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>
-            <a href="#" class="liendash"><div class="menuItem vw20">
+            <a href="#" class="liendash" ><div class="menuItem vw20" style="display:none;">
                 <p>Autre Outils</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>
-            <a href="#" class="liendash"><div class="menuItem vw30">
+            <a href="#" class="liendash"><div class="menuItem vw30" style="display:none;">
                 <p>Autre Outils</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>
-            <a href="#" class="liendash"><div class="menuItem vw20">
+            <a href="#" class="liendash"><div class="menuItem vw20" style="display:none;">
                 <p>Autre Outils</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>
-            <a href="#" class="liendash"><div class="menuItem vw30">
+            <a href="#" class="liendash"><div class="menuItem vw30" style="display:none;">
                 <p>Autre Outils</p>
                 <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>
