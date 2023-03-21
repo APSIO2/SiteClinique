@@ -1,4 +1,15 @@
 <?php
+$fitre = "all";
+
+$today = getdate();
+$toYear = $today['year'];
+$toMouth = $today['mon'];
+
+if(strlen($toMouth) < 2){
+    $toMouth = "0" . "$toMouth";
+}
+
+
 
 require("ConnexionBdd.php");
 
@@ -7,6 +18,10 @@ if(!isset($_SESSION['role'])){
     header("Location: ../index.php");
 }else if($_SESSION['role'] != "01"){
     header("Location: ../index.php");
+}
+
+if(isset($_GET["filtre"])){
+    $fitre = $_GET["filtre"];
 }
 
 $id = $_SESSION['id'];
@@ -39,18 +54,41 @@ try{
     <div class="titrestats">
         <h1>Vos statistiques</h1>
     </div>
+    <?php
+
+    // GESTION DU BOUTON POUR LE FILTRE
+
+    if($fitre == "all"){
+        echo ('<a class="button" href="?filtre=mois">Statistique par mois</a>');
+    }else{
+        echo ('<a class="button" href="medecin.php">Affichier toute les statitique</a>');
+    }
+
+    ?>
 
     <div class="statslist">
         <div class="stats" style="background-color:#6a7eb6; background-image: url('../IMG/mec.png');">
             <h2 class="textstats">
                 <?php
-                    $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = $id and patient.mineur = 0;");
-                    $stmt->execute();
-                            
-                    foreach ($stmt as $row) {
-                        $nb = $row[0];
-                        echo $nb;
+
+                    if($fitre == "all"){
+                        $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = $id and patient.mineur = 0;");
+                        $stmt->execute();
+                                
+                        foreach ($stmt as $row) {
+                            $nb = $row[0];
+                            echo $nb;
+                        }
+                    }else{
+                        $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = $id and patient.mineur = 0 and operation.date_op LIKE '$toYear-$toMouth-%';");
+                        $stmt->execute();
+                                
+                        foreach ($stmt as $row) {
+                            $nb = $row[0];
+                            echo $nb;
+                        }
                     }
+
                 ?>
             </h2>
             <p class="libelstats">Nombre de patients majeur<p>
@@ -58,6 +96,8 @@ try{
         <div class="stats" style="background-color:#c45959; background-image: url('../IMG/kids.png');">
             <h2 class="textstats">
                 <?php
+
+                if($fitre == "all"){
                     $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = $id and patient.mineur=1;");
                     $stmt->execute();
                             
@@ -65,6 +105,18 @@ try{
                         $nb = $row[0];
                         echo $nb;
                     }
+                }else{
+
+                    $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = $id and patient.mineur=1 and operation.date_op LIKE '$toYear-$toMouth-%';;");
+                    $stmt->execute();
+                            
+                    foreach ($stmt as $row) {
+                        $nb = $row[0];
+                        echo $nb;
+                    }
+
+                }
+
                 ?>
             </h2>
             <p class="libelstats">Nombre patient mineur<p>
@@ -72,6 +124,8 @@ try{
         <div class="stats" style="background-color:#59c466; background-image: url('../IMG/fleche.png');">
             <h2 class="textstats">
                 <?php
+
+                if($fitre == "all"){
                     $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = $id");
                     $stmt->execute();
                             
@@ -79,6 +133,17 @@ try{
                         $nb = $row[0];
                         echo $nb;
                     }
+                }else{
+
+                    $stmt = $conn->prepare("SELECT count(*) as nb FROM operation inner join patient on patient.num_secu = operation.num_secu where operation.num_med = $id and operation.date_op LIKE '$toYear-$toMouth-%';");
+                    $stmt->execute();
+                            
+                    foreach ($stmt as $row) {
+                        $nb = $row[0];
+                        echo $nb;
+                    }
+
+                }
                 ?>
             </h2>
             <p class="libelstats">Nombre total de patient<p>

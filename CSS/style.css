@@ -182,6 +182,21 @@ input,select{
 .form2 , .form3{
     display: none;
 }
+.button{
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 15px;
+    padding: 5px;
+    color: #595d4d;
+    background-color: #CCD5AE;
+    border: none;
+    border-radius: 10px;
+    min-width: 200px;
+    display: block;
+    transition-duration: 0.2s;
+    margin: 1vw;
+    width: 20vw;
+    text-align: center;
+}
 .buttonFormValid{
     font-family: 'Dela Gothic One', cursive;
     font-size: medium;
