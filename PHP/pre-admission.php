@@ -58,7 +58,7 @@ $today = date('Y-m-d');
                             <?php
                                 try{
                                     $conn = connexionBdd();
-                                    $stmt = $conn->prepare('SELECT * FROM personnel WHERE num_serv="01";');
+                                    $stmt = $conn->prepare('SELECT * FROM personnel WHERE num_role="1";');
                                     $stmt->execute();
                                             
                                 foreach ($stmt as $row) {
