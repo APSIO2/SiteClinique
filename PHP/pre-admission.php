@@ -27,7 +27,6 @@ $today = date('Y-m-d');
         <div class="form">
             <div id="form1">
                 <h2>Hospitalisation</h2>
-                <input type="submit" class="buttonFormValid">
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Pre-admission pour</p>
@@ -81,7 +80,6 @@ $today = date('Y-m-d');
             </div>
             <div class="disabled" id="form2">
                 <h2>Patient</h2>
-                <input type="submit" class="buttonFormValid">
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Numéro de sécurité social</p>
@@ -154,7 +152,6 @@ $today = date('Y-m-d');
             </div>
             <div class="disabled" id="form3">
                 <h2>Couverture Sociale</h2>
-                <input type="submit" class="buttonFormValid">
                 <div class="formItem">
                     <div class="midblock">
                         <p class="fullform">Organisme de Sécurité Sociale</p>
@@ -207,7 +204,6 @@ $today = date('Y-m-d');
             </div>
             <div class="disabled" id="form4">
                 <h2>Personne de Confiance</h2>
-                <input type="submit" class="buttonFormValid">
                 <div class="formItem">
                     <div class="midblock">
                         <p class="midform">Nom</p>
@@ -249,7 +245,6 @@ $today = date('Y-m-d');
             </div>
             <div class="disabled" id="form5">
                 <h2>Personne à Prévenir</h2>
-                <input type="submit" class="buttonFormValid">
                 <div class="formItem">
                     <div class="midblock">
                         <p class="midform">Nom</p>

@@ -76,7 +76,7 @@ if(!isset($_SESSION['role'])){
             <div class="formItem">
                 <div class="midblock">
                     <p class="fullform">Mot de passe :</p>
-                    <input type="text" name="mdp" class="fullform" required>
+                    <input type="password" name="mdp" class="fullform" required>
                 </div>
             </div>
             <div class="formItem">
