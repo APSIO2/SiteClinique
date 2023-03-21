@@ -2,12 +2,11 @@ function classSuivante(nombre){
 
     if(nombre == 2){
 
-        if(document.getElementById("secu").value.length == 0 || document.getElementById("mail").value.length == 0){
-            return;
-        }
-
         num = document.getElementById("secu").value;
         mail = document.getElementById("mail").value;
+        cp_pat = document.getElementById("cp_pat").value;
+        tel_pat = document.getElementById("tel_pat").value;
+        
 
         if(checkNumSecu(num) && checkMail(mail)){
             document.getElementById("form"+nombre).className = "disabled"
@@ -26,15 +25,33 @@ function classSuivante(nombre){
         }else{
             document.getElementById("secu").style.border = "none";
         }
+
+        if(!checkTel(tel_pat)){
+            document.getElementById("tel_pat").style.border = "2px solid red";
+        }else{
+            document.getElementById("tel_pat").style.border = "none";
+        }
+
+        
+        if(!checkCp(cp_pat)){
+            document.getElementById("cp_pat").style.border = "2px solid red";
+        }else{
+            document.getElementById("cp_pat").style.border = "none";
+        }
         
 
-    }else{
+    }else if(nombre == 4){
+
+    }else if(nombre == 5){
+
+    }
+    
+    else{
 
         document.getElementById("form"+nombre).className = "disabled"
         nombre++;
         document.getElementById("form"+nombre).className = "enabled";
     }
-
 
 }
 
@@ -44,6 +61,24 @@ function classPrecedente(nombre){
     nombre--;
     document.getElementById("form"+nombre).className = "enabled";
 
+
+}
+
+function checkTel(tel){
+
+    if(tel.length >= 8 && tel.length <= 10){
+        return true;
+    }
+    return false;
+
+}
+
+function checkCp(cp){
+
+    if(cp.length == 4){
+        return true;
+    }
+    return false;
 
 }
 
