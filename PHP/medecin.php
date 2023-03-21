@@ -155,7 +155,8 @@ try{
     </div>
     <?php
 
-    $stmt = $conn->prepare('SELECT * FROM operation where num_med = ' . $id);
+    $sql="SELECT * FROM operation inner join patient on operation.num_secu = patient.num_secu where operation.num_med = $id;";
+    $stmt = $conn->prepare($sql);
     $stmt->execute();
             
     foreach ($stmt as $row) {
@@ -164,6 +165,8 @@ try{
         $heure = $row['heure_op'];
         $type = $row['pre_admission'];
         $num_secu = $row['num_secu'];
+        $nom = $row['nom_naissance'];
+        $prenom =  $row['prenom_pat'];
 
         $date = $row['date_op'];
         $today = date("Y-m-d");   
@@ -185,10 +188,10 @@ try{
     ?>
     <div class="preaddMed">
         <div class="flexuser">
-            <p class="preaddMedText">Numéro de sécuriter : <?php echo $num_secu; ?></p>
-            <p class="preaddMedText">Date : <?php echo $date; ?> </p>
-            <p class="preaddMedText">Heure : <?php echo $heure; ?></p>
-            <p class="preaddMedText">Type : <?php echo $type; ?></p>
+            <p class="preaddMedText">Nom complet : <br> <?php echo $nom ." ". $prenom; ?></p>
+            <p class="preaddMedText">Date : <br> <?php echo $date; ?> </p>
+            <p class="preaddMedText">Heure : <br> <?php echo $heure; ?></p>
+            <p class="preaddMedText">Type : <br> <?php echo $type; ?></p>
         </div>
     </div>
 
