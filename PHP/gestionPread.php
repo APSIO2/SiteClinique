@@ -33,7 +33,7 @@
             <div class="pread">
 
             <?php
-                $numero_med = $row["num_med"];
+                $num_med = $row["num_med"];
                 $num_op = $row["num_op"];
                 $nom_med = $row["nom_med"];
                 $date_op = $row["date_op"];
