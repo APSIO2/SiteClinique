@@ -33,7 +33,7 @@
             <div class="pread">
 
             <?php
-                $numero_med = $row["num_med"];
+                $num_med = $row["num_med"];
                 $num_op = $row["num_op"];
                 $nom_med = $row["nom_med"];
                 $date_op = $row["date_op"];
@@ -47,7 +47,7 @@
                 echo "<label>Numéro de l'opération :</label><br>";
                 echo '<input name="num_op" type="text" value="'. $num_op .'" readonly class="info_pat"> <br>';
                 echo "<label>Nom du médecin : </label><br>";
-                echo '<select name="numero_med" value="'.$nom_med.'" id="" class="list_med">';
+                echo '<select name="num_med" value="'.$nom_med.'" id="" class="list_med">';
                     try{
                         $conn = connexionBdd();
                         $stmt = $conn->prepare('SELECT * FROM personnel WHERE num_role="01";');
@@ -58,7 +58,6 @@
                             $nom = $row[3];
                             echo "<option value='$num_med'> $nom </option>";
                             }
-                            echo "1";
                         }
                         catch(PDOException $e){
                             echo $e->getMessage();
