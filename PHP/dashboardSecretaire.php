@@ -39,7 +39,7 @@ if(!isset($_SESSION['role'])){
             </div></a>
             <a href="gestionPread.php" class="liendash"><div class="menuItem vw30">
                 <p>Gestion des pré-admissisons</p>
-                <img src="../IMG/gestion.png" alt="" srcset="" class="menuicon">
+                <img src="../IMG/80910.png" alt="" srcset="" class="menuicon">
             </div></a>
             <a href="#" class="liendash"><div class="menuItem vw20" style="display:none;">
                 <p>Autre Outils</p>
