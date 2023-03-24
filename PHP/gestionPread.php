@@ -46,8 +46,7 @@
                 echo "<form action='updatePread.php' class='' method='get'>";
                 echo "<label>Numéro de l'opération :</label><br>";
                 echo '<input name="num_op" type="text" value="'. $num_op .'" readonly class="info_pat"> <br>';
-                echo "<label>Nom du médecin : </label><br>";
-                echo $nom_med;
+                echo "<label>Nom du médecin : $nom_med</label><br>";
                 echo '<select name="num_med" value="'.$nom_med.'" id="" class="list_med">';
                     try{
                         $conn = connexionBdd();
@@ -57,7 +56,7 @@
                         foreach ($stmt as $row) {
                             $num_med = $row[0];
                             $nom = $row[3];
-                            echo "<option value='$num_med'> $nom </option>";
+                            echo "<option value='$num_med'> $nom</option>";
                             }
                         }
                         catch(PDOException $e){
