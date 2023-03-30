@@ -61,6 +61,9 @@
                         }
                         catch(PDOException $e){
                             echo $e->getMessage();
+
+
+                            
                         }
 
                 echo '</select>';
